@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /about/
+
+Sitemap: https://blog.inkey.top/sitemap.xml
+Sitemap: https://blog.inkey.top/baidusitemap.xml
