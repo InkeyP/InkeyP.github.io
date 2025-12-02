@@ -341,7 +341,7 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">14</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">16</div>
         <div class="label text-third-text-color text-sm">标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -349,7 +349,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">18</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">21</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -476,44 +476,19 @@
 
 <p>IDA一下</p>
 <p>main函数要求我们输入两个字符，如果是”ye”就退出</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/202311/30/abstract-shellcode/2023-11-30_19-07-06-17013449452931.png"
-                      alt="2023-11-30_19-07-06"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="/202311/30/abstract-shellcode/2023-11-30_19-07-06-17013449452931.png" alt="2023-11-30_19-07-06"></p>
 <p>进func看看，大概分为两个部分</p>
 <p>第一部分是一个循环，每次输入一字节，跳出条件为 (s-buf)&gt;16，即输入<em>17</em>个字符（划重点）</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/202311/30/abstract-shellcode/2023-11-30_19-01-04.png"
-                      alt="2023-11-30_19-01-04"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="/202311/30/abstract-shellcode/2023-11-30_19-01-04.png" alt="2023-11-30_19-01-04"></p>
 <p>第二部分，判断输入的字符是否在4E和5F之间，如果全部符合就call rax，也就是执行这段输入的shellcode</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/202311/30/abstract-shellcode/2023-11-30_19-02-32-17013449788742.png"
-                      alt="2023-11-30_19-02-32"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="/202311/30/abstract-shellcode/2023-11-30_19-02-32-17013449788742.png" alt="2023-11-30_19-02-32"></p>
 <p>重点来了，前面发现可以输入17个字符，但检测只检测16个字符，这里就有一个小漏洞了</p>
 <p>进gdb调试，断在call rax处</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/202311/30/abstract-shellcode/2023-11-30_19-20-37.png"
-                      alt="2023-11-30_19-20-37"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="/202311/30/abstract-shellcode/2023-11-30_19-20-37.png" alt="2023-11-30_19-20-37"></p>
 <p>分析栈结构发现</p>
 <p>rsp +8 刚好是第一次输入的字符的地址而前面输入则是不为”ye”的两个字符</p>
 <p>分析下寄存器</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/202311/30/abstract-shellcode/2023-11-30_19-23-43.png"
-                      alt="2023-11-30_19-23-43"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="/202311/30/abstract-shellcode/2023-11-30_19-23-43.png" alt="2023-11-30_19-23-43"></p>
 <p>找找用得上的东西</p>
 <p>分析完后就是构造shellcode了</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">0:  4e                      rex.WRX</span><br><span class="line">1:  4f 50                   rex.WRXB push r8</span><br><span class="line">3:  50                      push   rax</span><br><span class="line">4:  51                      push   rcx</span><br><span class="line">5:  52                      push   rdx</span><br><span class="line">6:  53                      push   rbx</span><br><span class="line">7:  54                      push   rsp</span><br><span class="line">8:  55                      push   rbp</span><br><span class="line">9:  56                      push   rsi</span><br><span class="line">a:  57                      push   rdi</span><br><span class="line">b:  58                      pop    rax</span><br><span class="line">c:  59                      pop    rcx</span><br><span class="line">d:  5a                      pop    rdx</span><br><span class="line">e:  5b                      pop    rbx</span><br><span class="line">f:  5c                      pop    rsp</span><br><span class="line">10: 5d                      pop    rbp</span><br><span class="line">11: 5e                      pop    rsi</span><br></pre></td></tr></table></figure></div>
@@ -602,9 +577,9 @@
 </a><a class="recommended-article-item" href="/202510/13/羊城杯-2025-初赛/" title="羊城杯-2025-初赛" rel="bookmark">
   <img src="/202510/13/羊城杯-2025-初赛/1.png" alt="羊城杯-2025-初赛" class="!max-w-none">
   <span class="title">羊城杯-2025-初赛</span>
-</a><a class="recommended-article-item" href="/202503/06/PlaidCTF2024-maglev/" title="PlaidCTF2024-maglev" rel="bookmark">
-  <img src="/img/cover/57.jpg" alt="PlaidCTF2024-maglev" class="!max-w-none">
-  <span class="title">PlaidCTF2024-maglev</span>
+</a><a class="recommended-article-item" href="/202512/02/强网拟态2025/" title="强网拟态2025" rel="bookmark">
+  <img src="/202512/02/强网拟态2025/cover.jpg" alt="强网拟态2025" class="!max-w-none">
+  <span class="title">强网拟态2025</span>
 </a></div>
    </div>
    <div class="recommended-mobile">
@@ -734,11 +709,11 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 18 篇文章
+                        共撰写了 21 篇文章
                     </span>
                     
                         <span>
-                            共 35.6k 字
+                            共 41.7k 字
                         </span>
                     
                 </p>
