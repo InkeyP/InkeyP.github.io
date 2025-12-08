@@ -33,7 +33,7 @@ export function initHBE() {
     var n = 0;
     var ba = new Array();
 
-    for (var j = 0; j < i; ) {
+    for (var j = 0; j < i;) {
       var c = s.codePointAt(j);
       if (c < 128) {
         ba[n++] = c;
@@ -238,6 +238,7 @@ export function initHBE() {
 
         // // load Redefine Page components
         main.refresh();
+        generateTOC();
         initTOC();
 
         // trigger event
@@ -253,6 +254,76 @@ export function initHBE() {
       });
 
     return result;
+  }
+
+  function generateTOC() {
+    const content = document.getElementById("hexo-blog-encrypt");
+    if (!content) return;
+    const headings = content.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    const tocContainer = document.querySelector(".post-toc-wrap .post-toc");
+    if (!headings.length || !tocContainer) return;
+
+    const oldNav = tocContainer.querySelector(".nav");
+    if (oldNav) oldNav.remove();
+
+    const rootOl = document.createElement("ol");
+    rootOl.className = "nav";
+
+    const stack = [{ level: 0, element: rootOl }];
+
+    headings.forEach((heading) => {
+      const level = parseInt(heading.tagName.charAt(1));
+
+      let id = heading.id;
+      if (!id) {
+        const baseId = heading.textContent.trim().replace(/\s+/g, "-").toLowerCase();
+        id = baseId;
+        let suffix = 1;
+        while (document.getElementById(id)) {
+          id = baseId + "-" + suffix;
+          suffix++;
+        }
+        heading.id = id;
+      }
+
+      const li = document.createElement("li");
+      li.className = "nav-item nav-level-" + level;
+
+      const a = document.createElement("a");
+      a.className = "nav-link";
+      a.href = "#" + id;
+
+      const span = document.createElement("span");
+      span.className = "nav-text";
+      span.textContent = heading.textContent;
+
+      a.appendChild(span);
+      li.appendChild(a);
+
+      while (stack.length > 1 && stack[stack.length - 1].level > level) {
+        stack.pop();
+      }
+
+      if (stack[stack.length - 1].level === level) {
+        stack[stack.length - 1].element.appendChild(li);
+      } else {
+        const parentOl = stack[stack.length - 1].element;
+        const lastLi = parentOl.lastElementChild;
+
+        if (lastLi) {
+          const newOl = document.createElement("ol");
+          newOl.className = "nav-child";
+          lastLi.appendChild(newOl);
+          newOl.appendChild(li);
+          stack.push({ level: level, element: newOl });
+        } else {
+          parentOl.appendChild(li);
+          stack.push({ level: level, element: parentOl });
+        }
+      }
+    });
+
+    tocContainer.appendChild(rootOl);
   }
 
   function hbeLoader() {
